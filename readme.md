@@ -65,7 +65,7 @@ If anyone has experience working with git in a team capacity and would like to h
     * Need usage of Asynchronous JavaScript so that setTimeout is invoked at appropriate times
 ​
 ## Classes
-* Monster Cards (Element Type, Attack Points, Defense Points Potentional Special Effects (some have special effects and some don't)
+* Monster Cards (Element Type, Attack Points, Defense Points, Star Values(rules based off number of stars monster card has), Special Effects (some have special effects and some don't)
     * Include 5 Egyptian Development Dragons (3 Egyptian God Cards but with 5 pursuit values instead) as part of monster cards
 * Field Spell Cards
     * Increase attack points or defense points or both of monsters of certain element type based on field spell card used.
@@ -126,8 +126,4 @@ If anyone has experience working with git in a team capacity and would like to h
 ## Contribution Check
 [Contributor Stats](https://github.com/JoseBorbon/Yu-Gi-Oh/graphs/contributors)
 
-YOLOLOLOLOLO
-YERRRRRRRRRRRRR WHAT UPPP
-SUP WE OUT HERE
-YEA WHATS GOOD HECTOR THUMBS UP!!!!
 ![yami the pharoah returns](https://i.pinimg.com/originals/b8/84/04/b88404e0df839a99b979e6c9a218a8e3.gif)
