@@ -20,16 +20,19 @@ If anyone has experience working with git in a team capacity and would like to h
 - Since we are new to using git I highly recommend backing things up in repl.
 ​
 ## Yu-Gi-Oh
+* Create a user object starting off which holds several values
 * Starter Decks
 * Dialogue (Filled with user based choices so they can pick what starter deck they want) Also include cheatcode deck to always win since we're devs and we're cool.
 * [Battle City Rules](https://yugioh-x13.fandom.com/wiki/Battle_City_Rules) - if we go this route.
 * Figure out currency or something for shop
 * Have Maximum number of cards player can hold in a deck (At least 40? Still need to figure out specifics on deck size limit if we go with battle city segment)
 * Battle System (Life Point Options included 4k or 8k)
-    * Face Down card, Face Up card option place
-    * Attack option
-    * Defense Mode option
+    * Shuffle Deck In Beginning Using Fisher-Yates Shuffle
+    * Face Down card, Face Up card option place onto field as well as place in defense or attack mode onto field
+    * Attack option on field
+    * Defense Mode option on field
     * Pass Option
+    * View Card Description Option
     * Polymerization -- VERY INTERESTING AND IM WONDERING HOW TO MAKE IT HAPPEN without ruining too much things and ensuring requirements are there. (Perhaps have a property on object called onField and originally set value to false, until object is put on the field, then set value to true.)
     * Field Spell Card Overriding
     * Potential ASCII ART??????????? To Show Cards on a "Field Plane" while in battle
@@ -65,12 +68,18 @@ If anyone has experience working with git in a team capacity and would like to h
     * Have Players view what's in their deck by having it logged to the console if they hit yes, otherwise boot them back out to locations
     * Deck Pouch iterates through array and then logs to the console a wrapped up list of each monster in deck with appropriate index number so player can pick card to grab.
         * Create Option for player to choose more than one card, will have to specify a range or pick index numbers as input to get it to work. (Would need to check deck length and do a bit of math, someone who ain't scared of math gotta do this)
+        * View Card Description
     * Need More INPUT
 * Deck Itself
     * Have Players view what's in their deck by having it logged to the console if they hit yes, otherwise boot them back out to locations
     * Deck iterates  iterates through array and then logs to the console a wrapped up list of each monster in deck with appropriate index number so player can pick card to view
         * if they want to remove a specific number of cards, pick the indexes all at once, or one, or specify range
+        * View Card Description
     * Need More INPUT
+* Look into later
+    * Traveling Card Merchant that sells really nice cards
+    * Milenium Items Arc with pieces (Currently Null On user Object)
+    * Rest TBD
 ​
 ### * UNIT TESTING WILL BE NEEDED
 ### * ALSO WILL NEED TO GET PEOPLE ON BOARD WITH USING [GIT](https://git-scm.com/downloads)
@@ -81,6 +90,10 @@ If anyone has experience working with git in a team capacity and would like to h
 - Jose Borbon - [JoseBorbon](https://github.com/JoseBorbon)
 - Christina Loiacono - [christina-ml](https://github.com/christina-ml)
 - [add-your-name-here](https://github.com/yourUsername)
+
+## Contribution Check
+[Contributor Stats](https://github.com/JoseBorbon/Yu-Gi-Oh/graphs/contributors)
+
 YOLOLOLOLOLO
 YERRRRRRRRRRRRR WHAT UPPP
 SUP WE OUT HERE
