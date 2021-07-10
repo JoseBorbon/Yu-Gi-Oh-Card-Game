@@ -36,17 +36,13 @@ If anyone has experience working with git in a team capacity and would like to h
 - Unless player chooses to concede (surrender).
 ​
 ## Yu-Gi-Oh
-<<<<<<< HEAD
 * Create a user object starting off which holds several values
-* Starter Decks
-=======
 * Starter Decks - How many cards? 30, 40?
     - Balance out the decks (either actual, or create decks of side characters in Yu-Gi-Oh)
     - Pick between 1 of 3 decks:
     - Yugi Deck
     - Kaiba Deck (blue eyes white dragon - strongest card in the game)
     - Joey Wheeler Deck
->>>>>>> c09a840cc73bf4ad7374dd5647cd21fd6f15e8dc
 * Dialogue (Filled with user based choices so they can pick what starter deck they want) Also include cheatcode deck to always win since we're devs and we're cool.
     - Go as you go
 * [Battle City Rules](https://yugioh-x13.fandom.com/wiki/Battle_City_Rules) - if we go this route.
