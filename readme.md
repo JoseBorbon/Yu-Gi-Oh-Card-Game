@@ -15,7 +15,7 @@ After I get a bit more used to using git, I will be looking to figure out how to
 If anyone has experience working with git in a team capacity and would like to help get people up to speed, feel free to post here. I'm still looking this stuff up and messing up directories and failing forward as I go.
 ​
 ## To Do
-- First, get OOP out of the way. This project will win/die with the monster cards. (Jose)
+- First, get OOP out of the way. This project will win/fail with the monster cards. (Jose)
 - Work on the battle system - am I able to use API in VS Code or not? (Jose)
 - If you want a delay to happen - setTimeout. A small pause before one of these people's turns to go. Makes game more immersive.
 - Get Extra Input for Ideas(If you see something extra we can add, write it down and say something then)
