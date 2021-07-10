@@ -15,13 +15,35 @@ After I get a bit more used to using git, I will be looking to figure out how to
 If anyone has experience working with git in a team capacity and would like to help get people up to speed, feel free to post here. I'm still looking this stuff up and messing up directories and failing forward as I go.
 ​
 ## To Do
+- First, get OOP out of the way. This project will win/die with the monster cards. (Jose)
+- Work on the battle system - am I able to use API in VS Code or not? (Jose)
+- If you want a delay to happen - setTimeout. A small pause before one of these people's turns to go. Makes game more immersive.
 - Get Extra Input for Ideas(If you see something extra we can add, write it down and say something then)
 - Go in-depth on using git and setting up peoples vscode
 - Since we are new to using git I highly recommend backing things up in repl.
+- Shadow games?
+- Add a level system - character level, once they're level 20, there's a 5% chance if you're out on the map location that you'll have the chance to encounter a Rare Hunter. Choose: Yes, I want to fight you, or no I don't.
+    - If user says no, stick to the current location where they were. Otherwise, if they choose yes, they enter the battle.
+    - Every 10-20 seconds there's a 5% chance for this thing to pop up (asynchronous JavaScript - Including time aspect for "seconds").
+    - Use setInterval for the 5% chance in the Hunter fight
+    - Do a math.random for this & Rare Hunter - this is the duelist that you're going to fight now.
+    - 8 for battle city random street fights, 10 for Rare Hunters
+
+## Win or Lose
+- Each player starts off with 4,000 life points
+- First person to get to 0 life points = LOSE
+- If you have zero cards remaining in your deck to pick from, you get eliminated from the duel = LOSE.
+- Unless player chooses to concede (surrender).
 ​
 ## Yu-Gi-Oh
-* Starter Decks
+* Starter Decks - How many cards? 30, 40?
+    - Balance out the decks (either actual, or create decks of side characters in Yu-Gi-Oh)
+    - Pick between 1 of 3 decks:
+    - Yugi Deck
+    - Kaiba Deck (blue eyes white dragon - strongest card in the game)
+    - Joey Wheeler Deck
 * Dialogue (Filled with user based choices so they can pick what starter deck they want) Also include cheatcode deck to always win since we're devs and we're cool.
+    - Go as you go
 * [Battle City Rules](https://yugioh-x13.fandom.com/wiki/Battle_City_Rules) - if we go this route.
 * Figure out currency or something for shop
 * Have Maximum number of cards player can hold in a deck (At least 40? Still need to figure out specifics on deck size limit if we go with battle city segment)
@@ -50,10 +72,13 @@ If anyone has experience working with git in a team capacity and would like to h
 ​
 ## Locations (Map)
 (IIFE that will begin with starting people in tutorial and give option to leave tutorial and go to mainland)
+- Can use a regular function (you create 1 function & within that function you have a while loop that points back to the first thing...we give the user choices. Give them an option to input of where to go. Once they choose an option - go into a store, or go back, to the first function that they currently were at. Nested loops with functions in them. If we invoke this location, otherwise we invoke this other location. So..you're currently here: where would you like to go next? Using a While Loop - to keep on going.) Or to exit game, change the variable to Exit Game.
    * Shop to buy special rare cards
-        * Dialogue
+        - Give a currency to buy stuff (coins, dollars, or something...make it a number)
+        * Dialogue - Each location will have it's own kind of dialogue
         * Card Prices
         * Give option for user to store card in deck if their deck size is less than max number of cards, otherwise send to their "deck pouch"
+        - Create an object, user would have to pick which number would they want - iterate through this object and let the user know these are all your choices: pick one. If you have enough currency, they can buy it. Otherwise you don't have enough, come back later.
 * Tournament Mode Arena (Can technically create closure as well here for save point)
     * Dialogue
     * TBD Need INPUT
@@ -61,6 +86,9 @@ If anyone has experience working with git in a team capacity and would like to h
     * TBD Need Input
 * Battle City random street fights, collect 3 cards and be eligible to participate in tournament mode arena.
     * TBD Need Input
+    - You're out on the street
+    - Do a math.random for this & Rare Hunter - this is the duelist that you're going to fight now.
+    - 8 for battle city random street fights, 10 for Rare Hunters
 * Deck Pouch (Technically a part of Locations since it's a free to roam around map)
     * Have Players view what's in their deck by having it logged to the console if they hit yes, otherwise boot them back out to locations
     * Deck Pouch iterates through array and then logs to the console a wrapped up list of each monster in deck with appropriate index number so player can pick card to grab.
