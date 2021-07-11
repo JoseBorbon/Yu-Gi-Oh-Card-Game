@@ -21,8 +21,7 @@ const user = {
   mileniumPieces: null, // will be a part of milenium items arc
 };
 
-//create monstercard class
-
+//create duelMonsterNormal class [underscore is needed for property names otherwise it'll cause stack overflow error]
 class DuelMonsterNormal {
   constructor(
     name,
@@ -33,54 +32,59 @@ class DuelMonsterNormal {
     defensePoints,
     fusionID
   ) {
-    this.name = name;
-    this.starLevel = starLevel; //star level is amount of stars on top right of card
-    this.type = [type, "Normal"];
-    this.attribute = attribute; // elemental attribute
-    this.attackPoints = attackPoints;
-    this.defensePoints = defensePoints;
-    this.fusionID = fusionID;
-    this.onField = false;
-    this.inGraveyard = false;
-    this.faceUp = true; //set to false for face-down
+    this._name = name;
+    this._starLevel = starLevel; //star level is amount of stars on top right of card
+    this._type = [type, "Normal"];
+    this._attribute = attribute; // elemental attribute
+    this._attackPoints = attackPoints;
+    this._defensePoints = defensePoints;
+    this._fusionID = fusionID;
+    this._specialEffect = null;
+    this._onField = false;
+    this._inGraveyard = false;
+    this._faceUp = true; //set to false for face-down
   }
   //getters
   get attackPoints() {
-    return this.attackPoints;
+    return this._attackPoints;
   }
   get defensePoints() {
-    return this.defensePoints;
+    return this._defensePoints;
   }
   get starLevel() {
-    return this.starLevel;
+    return this._starLevel;
   }
   get type() {
-    return this.type;
+    return this._type;
   }
   get attribute() {
-    return this.attribute;
+    return this._attribute;
   }
   get fusionID() {
-    return this.fusionID;
+    return this._fusionID;
   }
   get faceUp() {
-    return this.faceUp;
+    return this._faceUp;
   }
+  get specialEffect() {
+    return this._specialEffect; //May not need this, added it incase we end up needing to give a normal card an effect
+  }
+
   //setters
   set attackPoints(newAttackPoints) {
-    this.attackPoints = newAttackPoints;
+    this._attackPoints = newAttackPoints;
   }
   set defensePoints(newDefensePoints) {
-    this.defensePoints = newDefensePoints;
+    this._defensePoints = newDefensePoints;
   }
   set starLevel(newStarLevel) {
-    this.starLevel = newStarLevel;
+    this._starLevel = newStarLevel;
   }
   set type(newType) {
-    this.type = newType;
+    this._type = newType;
   }
   set attribute(newAttribute) {
-    this.attribute = newAttribute;
+    this._attribute = newAttribute;
   }
 
   //methods
@@ -88,3 +92,61 @@ class DuelMonsterNormal {
     this.faceUp = false;
   }
 }
+
+// create duelMonsterSpecialClass
+
+class DuelMonsterSpecial extends DuelMonsterNormal {
+  constructor(
+    name,
+    starLevel,
+    type,
+    attribute,
+    attackPoints,
+    defensePoints,
+    fusionID,
+    specialEffect
+  ) {
+    super(name, starLevel, attribute, attackPoints, defensePoints, fusionID);
+    this._type = [type, "Effect"];
+    this._specialEffect = specialEffect.toLowerCase(); //takes in string value
+  }
+
+  get specialEffect() {
+    return this._specialEffect;
+  }
+
+  set specialEffect(newSpecialEffect) {
+    this._specialEffect = newSpecialEffect; // May not need this, put it just in case
+  }
+}
+
+const blueEyesWhiteDragon = new DuelMonsterNormal(
+  "Blue-Eyes White Dragon",
+  8,
+  "Dragon",
+  "Light",
+  3000,
+  2500,
+  1
+);
+const darkMagician = new DuelMonsterNormal(
+  "Dark Magician",
+  7,
+  "Spell Caster",
+  "Dark",
+  2500,
+  2100,
+  2
+);
+const silentWobby = new DuelMonsterSpecial(
+  "Silent Wobby",
+  4,
+  "Fish",
+  "Water",
+  1000,
+  2000,
+  null,
+  `During your Main Phase: You can Special Summon this card from your hand to your opponent's side of the field. When Summoned this way: Draw 1 card, and if you do, your opponent gains 2000 Life Points. You can only use this effect of "Silent Wobby" once per turn. The hand size limit of this card's controller becomes 3.`
+);
+
+console.log(silentWobby.attackPoints);
