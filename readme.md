@@ -104,7 +104,9 @@ If anyone has experience working with git in a team capacity and would like to h
         * if they want to remove a specific number of cards, pick the indexes all at once, or one, or specify range
         * View Card Description
     * Need More INPUT
-* Look into later
+
+
+# Look into later
     * Traveling Card Merchant that sells really nice cards
     * Milenium Items Arc with pieces (Currently Null On user Object)
     * Rest TBD
