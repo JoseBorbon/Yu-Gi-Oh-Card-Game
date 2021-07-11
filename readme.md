@@ -129,8 +129,12 @@ If anyone has experience working with git in a team capacity and would like to h
    * [Monster Cards In Our Project](https://db.ygoprodeck.com/search/?&startdate=Thu%20Dec%2031%201998&enddate=Tue%20Nov%2030%202004&dateregion=tcg_date&sort=tcg_date&num=100&offset=0&view=Gallery)
    * [Battle City Rules](https://yugioh-x13.fandom.com/wiki/Battle_City_Rules)
    * [JSDocs Canvas Git](https://github.com/joinpursuit/8-0-technical-curriculum/blob/main/01-fundamentals/understanding-code-challenges/reading/jsdocs.md)
+   * [Contributor Stats](https://github.com/JoseBorbon/Yu-Gi-Oh/graphs/contributors)
 
-
+### Field Mat We Will be Mimicking In The Game
+![field mat](https://i.ebayimg.com/images/g/PLwAAOSwZepderBM/s-l1600.jpg)
+### Yami
+![yami the pharoah returns](https://i.pinimg.com/originals/b8/84/04/b88404e0df839a99b979e6c9a218a8e3.gif)
 
 ### * UNIT TESTING WILL BE NEEDED
 ### * ALSO WILL NEED TO GET PEOPLE ON BOARD WITH USING [GIT](https://git-scm.com/downloads)
@@ -144,8 +148,3 @@ _This is still a work in progress and I know there is so much more we can add._
 - Christina Loiacono - [christina-ml](https://github.com/christina-ml)
 - [add-your-name-here](https://github.com/yourUsername)
 
-## Contribution Check
-
-[Contributor Stats](https://github.com/JoseBorbon/Yu-Gi-Oh/graphs/contributors)
-
-![yami the pharoah returns](https://i.pinimg.com/originals/b8/84/04/b88404e0df839a99b979e6c9a218a8e3.gif)
