@@ -10,17 +10,23 @@
 ## Overview
 Biggest things this week will be for everyone to **get up to speed on using git** (this includes not deleting stuff, creating branches and etc). The second thing will be **understanding the concept of "separation of concerns"** (understanding why and how to import things if needed and export things from one file to another). In order to accomplish this we will need 1 "Master File" where all the functions will eventually get exported to.
 ​
+
 After I get a bit more used to using git, I will be looking to figure out how to create and run "unit tests"
 ​
+
 If anyone has experience working with git in a team capacity and would like to help get people up to speed, feel free to post here. I'm still looking this stuff up and messing up directories and failing forward as I go.
 ​
 ## To Do
+<<<<<<< HEAD
 - First, get OOP out of the way. This project will win/fail with the monster cards. (Jose)
+=======
+- First, get [OOP](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS) out of the way. This project will win/die with the monster cards. (Jose)
+>>>>>>> e2999e2 (added links to readme)
 - Work on the battle system - am I able to use API in VS Code or not? (Jose)
-- If you want a delay to happen - setTimeout. A small pause before one of these people's turns to go. Makes game more immersive.
+- If you want a delay to happen - [setTimeout](https://www.w3schools.com/jsref/met_win_settimeout.asp). A small pause before one of these people's turns to go. Makes game more immersive.
 - Get Extra Input for Ideas(If you see something extra we can add, write it down and say something then)
 - Go in-depth on using git and setting up peoples vscode
-- Since we are new to using git I highly recommend backing things up in repl.
+- Since we are new to using git I highly recommend backing things up in [repl](https://replit.com/).
 - Shadow games?
 - Add a level system - character level, once they're level 20, there's a 5% chance if you're out on the map location that you'll have the chance to encounter a Rare Hunter. Choose: Yes, I want to fight you, or no I don't.
     - If user says no, stick to the current location where they were. Otherwise, if they choose yes, they enter the battle.
@@ -58,7 +64,7 @@ If anyone has experience working with git in a team capacity and would like to h
     * Polymerization -- VERY INTERESTING AND IM WONDERING HOW TO MAKE IT HAPPEN without ruining too much things and ensuring requirements are there. (Perhaps have a property on object called onField and originally set value to false, until object is put on the field, then set value to true.)
     * Field Spell Card Overriding
     * Potential ASCII ART??????????? To Show Cards on a "Field Plane" while in battle
-    * Need usage of Asynchronous JavaScript so that setTimeout is invoked at appropriate times
+    * Need usage of [Asynchronous JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous) so that [setTimeout](https://www.w3schools.com/jsref/met_win_settimeout.asp) is invoked at appropriate times
 ​
 ## Classes
 * Monster Cards (Element Type, Attack Points, Defense Points, Star Values(rules based off number of stars monster card has), Special Effects (some have special effects and some don't)
@@ -75,7 +81,7 @@ If anyone has experience working with git in a team capacity and would like to h
 ​
 ## Locations (Map)
 (IIFE that will begin with starting people in tutorial and give option to leave tutorial and go to mainland)
-- Can use a regular function (you create 1 function & within that function you have a while loop that points back to the first thing...we give the user choices. Give them an option to input of where to go. Once they choose an option - go into a store, or go back, to the first function that they currently were at. Nested loops with functions in them. If we invoke this location, otherwise we invoke this other location. So..you're currently here: where would you like to go next? Using a While Loop - to keep on going.) Or to exit game, change the variable to Exit Game.
+- Can use a regular function (you create 1 function & within that function you have a while loop that points back to the first thing...we give the user choices. Give them an option to input of where to go. Once they choose an option - go into a store, or go back, to the first function that they currently were at. Nested loops with functions in them. If we invoke this location, otherwise we invoke this other location. So..you're currently here: where would you like to go next? Using a [While Loop](https://www.w3schools.com/js/js_loop_while.asp) - to keep on going.) Or to exit game, change the variable to Exit Game.
    * Shop to buy special rare cards
         - Give a currency to buy stuff (coins, dollars, or something...make it a number)
         * Dialogue - Each location will have it's own kind of dialogue
