@@ -126,7 +126,7 @@ If anyone has experience working with git in a team capacity and would like to h
 ​
 ## Sources
 
-   * [Monster Cards In Our Project](https://db.ygoprodeck.com/search/?&startdate=Thu%20Dec%2031%201998&enddate=Wed%20Dec%2001%202004&dateregion=tcg_date&sort=tcg_date&num=100&offset=0&view=List)
+   * [Monster Cards In Our Project](https://db.ygoprodeck.com/search/?&startdate=Thu%20Dec%2031%201998&enddate=Tue%20Nov%2030%202004&dateregion=tcg_date&sort=tcg_date&num=100&offset=0&view=Gallery)
    * [Battle City Rules](https://yugioh-x13.fandom.com/wiki/Battle_City_Rules)
    * [JSDocs Canvas Git](https://github.com/joinpursuit/8-0-technical-curriculum/blob/main/01-fundamentals/understanding-code-challenges/reading/jsdocs.md)
 
