@@ -7,6 +7,7 @@
 1. [Yu-Gi-Oh](#yu-gi-oh)
 2. [Classes](#classes)
 3. [Locations](#locations-map)
+4. [Sources](#sources)
    ​
    ​
 
@@ -56,7 +57,6 @@ If anyone has experience working with git in a team capacity and would like to h
     - Joey Wheeler Deck
 * Dialogue (Filled with user based choices so they can pick what starter deck they want) Also include cheatcode deck to always win since we're devs and we're cool.
     - Go as you go
-* [Battle City Rules](https://yugioh-x13.fandom.com/wiki/Battle_City_Rules) - if we go this route.
 * Figure out currency or something for shop
 * Have Maximum number of cards player can hold in a deck (At least 40? Still need to figure out specifics on deck size limit if we go with battle city segment)
 * Battle System (Life Point Options included 4k or 8k)
@@ -125,6 +125,13 @@ If anyone has experience working with git in a team capacity and would like to h
     * Milenium Items Arc with pieces (Currently Null On user Object)
     * Rest TBD
 ​
+## Sources
+
+   * <a href="https://db.ygoprodeck.com/search/?&startdate=Thu%20Dec%2031%201998&enddate=Wed%20Dec%2001%202004&dateregion=tcg_date&sort=tcg_date&num=100&offset=0&view=List" target="_blank">Monster Cards In Our Project</a>
+
+   * [Battle City Rules](https://yugioh-x13.fandom.com/wiki/Battle_City_Rules)
+
+
 ### * UNIT TESTING WILL BE NEEDED
 ### * ALSO WILL NEED TO GET PEOPLE ON BOARD WITH USING [GIT](https://git-scm.com/downloads)
 ​
