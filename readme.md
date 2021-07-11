@@ -17,7 +17,11 @@ After I get a bit more used to using git, I will be looking to figure out how to
 If anyone has experience working with git in a team capacity and would like to help get people up to speed, feel free to post here. I'm still looking this stuff up and messing up directories and failing forward as I go.
 ​
 ## To Do
+<<<<<<< HEAD
+- First, get OOP out of the way. This project will win/fail with the monster cards. (Jose)
+=======
 - First, get [OOP](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS) out of the way. This project will win/die with the monster cards. (Jose)
+>>>>>>> e2999e2 (added links to readme)
 - Work on the battle system - am I able to use API in VS Code or not? (Jose)
 - If you want a delay to happen - [setTimeout](https://www.w3schools.com/jsref/met_win_settimeout.asp). A small pause before one of these people's turns to go. Makes game more immersive.
 - Get Extra Input for Ideas(If you see something extra we can add, write it down and say something then)
@@ -38,6 +42,7 @@ If anyone has experience working with git in a team capacity and would like to h
 - Unless player chooses to concede (surrender).
 ​
 ## Yu-Gi-Oh
+* Create a user object starting off which holds several values
 * Starter Decks - How many cards? 30, 40?
     - Balance out the decks (either actual, or create decks of side characters in Yu-Gi-Oh)
     - Pick between 1 of 3 decks:
@@ -50,17 +55,19 @@ If anyone has experience working with git in a team capacity and would like to h
 * Figure out currency or something for shop
 * Have Maximum number of cards player can hold in a deck (At least 40? Still need to figure out specifics on deck size limit if we go with battle city segment)
 * Battle System (Life Point Options included 4k or 8k)
-    * Face Down card, Face Up card option place
-    * Attack option
-    * Defense Mode option
+    * Shuffle Deck In Beginning Using Fisher-Yates Shuffle
+    * Face Down card, Face Up card option place onto field as well as place in defense or attack mode onto field
+    * Attack option on field
+    * Defense Mode option on field
     * Pass Option
+    * View Card Description Option
     * Polymerization -- VERY INTERESTING AND IM WONDERING HOW TO MAKE IT HAPPEN without ruining too much things and ensuring requirements are there. (Perhaps have a property on object called onField and originally set value to false, until object is put on the field, then set value to true.)
     * Field Spell Card Overriding
     * Potential ASCII ART??????????? To Show Cards on a "Field Plane" while in battle
     * Need usage of [Asynchronous JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous) so that [setTimeout](https://www.w3schools.com/jsref/met_win_settimeout.asp) is invoked at appropriate times
 ​
 ## Classes
-* Monster Cards (Element Type, Attack Points, Defense Points Potentional Special Effects (some have special effects and some don't)
+* Monster Cards (Element Type, Attack Points, Defense Points, Star Values(rules based off number of stars monster card has), Special Effects (some have special effects and some don't)
     * Include 5 Egyptian Development Dragons (3 Egyptian God Cards but with 5 pursuit values instead) as part of monster cards
 * Field Spell Cards
     * Increase attack points or defense points or both of monsters of certain element type based on field spell card used.
@@ -95,12 +102,20 @@ If anyone has experience working with git in a team capacity and would like to h
     * Have Players view what's in their deck by having it logged to the console if they hit yes, otherwise boot them back out to locations
     * Deck Pouch iterates through array and then logs to the console a wrapped up list of each monster in deck with appropriate index number so player can pick card to grab.
         * Create Option for player to choose more than one card, will have to specify a range or pick index numbers as input to get it to work. (Would need to check deck length and do a bit of math, someone who ain't scared of math gotta do this)
+        * View Card Description
     * Need More INPUT
 * Deck Itself
     * Have Players view what's in their deck by having it logged to the console if they hit yes, otherwise boot them back out to locations
     * Deck iterates  iterates through array and then logs to the console a wrapped up list of each monster in deck with appropriate index number so player can pick card to view
         * if they want to remove a specific number of cards, pick the indexes all at once, or one, or specify range
+        * View Card Description
     * Need More INPUT
+
+
+# Look into later
+    * Traveling Card Merchant that sells really nice cards
+    * Milenium Items Arc with pieces (Currently Null On user Object)
+    * Rest TBD
 ​
 ### * UNIT TESTING WILL BE NEEDED
 ### * ALSO WILL NEED TO GET PEOPLE ON BOARD WITH USING [GIT](https://git-scm.com/downloads)
@@ -111,8 +126,8 @@ If anyone has experience working with git in a team capacity and would like to h
 - Jose Borbon - [JoseBorbon](https://github.com/JoseBorbon)
 - Christina Loiacono - [christina-ml](https://github.com/christina-ml)
 - [add-your-name-here](https://github.com/yourUsername)
-YOLOLOLOLOLO
-YERRRRRRRRRRRRR WHAT UPPP
-SUP WE OUT HERE
-YEA WHATS GOOD HECTOR THUMBS UP!!!!
+
+## Contribution Check
+[Contributor Stats](https://github.com/JoseBorbon/Yu-Gi-Oh/graphs/contributors)
+
 ![yami the pharoah returns](https://i.pinimg.com/originals/b8/84/04/b88404e0df839a99b979e6c9a218a8e3.gif)
