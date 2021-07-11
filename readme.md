@@ -2,7 +2,6 @@
 
 - [Overview](#overview)
 - [To Do 7/9](#to-do)
-- [JSDocs](https://github.com/joinpursuit/8-0-technical-curriculum/blob/main/01-fundamentals/understanding-code-challenges/reading/jsdocs.md)
 
 1. [Yu-Gi-Oh](#yu-gi-oh)
 2. [Classes](#classes)
@@ -127,9 +126,10 @@ If anyone has experience working with git in a team capacity and would like to h
 ​
 ## Sources
 
-   * <a href="https://db.ygoprodeck.com/search/?&startdate=Thu%20Dec%2031%201998&enddate=Wed%20Dec%2001%202004&dateregion=tcg_date&sort=tcg_date&num=100&offset=0&view=List" target="_blank">Monster Cards In Our Project</a>
-
+   * [Monster Cards In Our Project](https://db.ygoprodeck.com/search/?&startdate=Thu%20Dec%2031%201998&enddate=Wed%20Dec%2001%202004&dateregion=tcg_date&sort=tcg_date&num=100&offset=0&view=List)
    * [Battle City Rules](https://yugioh-x13.fandom.com/wiki/Battle_City_Rules)
+   * [JSDocs Canvas Git](https://github.com/joinpursuit/8-0-technical-curriculum/blob/main/01-fundamentals/understanding-code-challenges/reading/jsdocs.md)
+
 
 
 ### * UNIT TESTING WILL BE NEEDED
