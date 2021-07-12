@@ -150,5 +150,6 @@ _This is still a work in progress and I know there is so much more we can add._
 
 - Jose Borbon - [JoseBorbon](https://github.com/JoseBorbon)
 - Christina Loiacono - [christina-ml](https://github.com/christina-ml)
-- [add-your-name-here](https://github.com/yourUsername)
+- Hulkaroy Jouraboeva - [hulkaroyJouraboeva](https://github.com/hulkaroyJouraboeva)
 
+Helloooooooooo!
