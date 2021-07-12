@@ -21,8 +21,15 @@ const user = {
   mileniumPieces: null, // will be a part of milenium items arc
 };
 
-//create duelMonsterNormal class [underscore is needed for property names otherwise it'll cause stack overflow error]
-class DuelMonsterNormal {
+//create magic card class
+//create field spell card sub-class from magic card
+//create equip spell card sub-class from magic card
+//create ritual spell card sub-class from magic card
+
+//create trap card class - Will be used to counter specific conditions (Mostly attack though)
+
+//create duelMonster class [underscore is needed for property names otherwise it'll cause stack overflow error]
+class DuelMonster {
   constructor(
     name,
     starLevel,
@@ -34,7 +41,7 @@ class DuelMonsterNormal {
   ) {
     this._name = name;
     this._starLevel = starLevel; //star level is amount of stars on top right of card
-    this._type = [type, "Normal"];
+    this._type = [type];
     this._attribute = attribute; // elemental attribute
     this._attackPoints = attackPoints;
     this._defensePoints = defensePoints;
@@ -86,6 +93,9 @@ class DuelMonsterNormal {
   set attribute(newAttribute) {
     this._attribute = newAttribute;
   }
+  set specialEffect(newSpecialEffect) {
+    this._specialEffect = newSpecialEffect;
+  }
 
   //methods
   setfaceDown() {
@@ -94,8 +104,7 @@ class DuelMonsterNormal {
 }
 
 // create duelMonsterSpecialClass
-
-class DuelMonsterSpecial extends DuelMonsterNormal {
+class DuelMonsterSpecial extends DuelMonster {
   constructor(
     name,
     starLevel,
@@ -106,7 +115,15 @@ class DuelMonsterSpecial extends DuelMonsterNormal {
     fusionID,
     specialEffect
   ) {
-    super(name, starLevel, attribute, attackPoints, defensePoints, fusionID);
+    super(
+      name,
+      starLevel,
+      type,
+      attribute,
+      attackPoints,
+      defensePoints,
+      fusionID //setting to null if card does not have a fusion
+    );
     this._type = [type, "Effect"];
     this._specialEffect = specialEffect.toLowerCase(); //takes in string value
   }
@@ -120,7 +137,71 @@ class DuelMonsterSpecial extends DuelMonsterNormal {
   }
 }
 
-const blueEyesWhiteDragon = new DuelMonsterNormal(
+class DuelMonsterFusion extends DuelMonster {
+  constructor(
+    name,
+    starLevel,
+    type,
+    attribute,
+    attackPoints,
+    defensePoints,
+    fusionID,
+    fusionMaterials
+  ) {
+    super(
+      name,
+      starLevel,
+      type,
+      attribute,
+      attackPoints,
+      defensePoints,
+      fusionID
+    );
+    this._name = name;
+    this._starLevel = starLevel;
+    this._type = [type, "Fusion"]; //Leverage the string fusion to throw Fusion Monsters into
+    this._attribute = attribute;
+    this._attackPoints = attackPoints;
+    this._defensePoints = defensePoints;
+    this._fusionID = fusionID;
+    this._fusionMaterials = fusionMaterials; //String Indicating which monsters are needed in order to summon fused monster
+  }
+}
+
+class DuelMonsterFusionSpecial extends DuelMonster {
+  constructor(
+    name,
+    starLevel,
+    type,
+    attribute,
+    attackPoints,
+    defensePoints,
+    fusionID,
+    fusionMaterials,
+    specialEffect
+  ) {
+    super(
+      name,
+      starLevel,
+      type,
+      attribute,
+      attackPoints,
+      defensePoints,
+      fusionID
+    );
+    this._name = name;
+    this._starLevel = starLevel;
+    this._type = [type, "Fusion", "Effect"]; //Leverage the string fusion to throw Fusion Monsters into
+    this._attribute = attribute;
+    this._attackPoints = attackPoints;
+    this._defensePoints = defensePoints;
+    this._fusionID = fusionID;
+    this._fusionMaterials = fusionMaterials; //String Indicating which monsters are needed in order to summon fused monster
+    this._specialEffect = specialEffect; //Array of strings in specific order in case more than 1 effect for monster
+  }
+}
+
+const blueEyesWhiteDragon = new DuelMonster(
   "Blue-Eyes White Dragon",
   8,
   "Dragon",
@@ -129,7 +210,8 @@ const blueEyesWhiteDragon = new DuelMonsterNormal(
   2500,
   1
 );
-const darkMagician = new DuelMonsterNormal(
+
+const darkMagician = new DuelMonster(
   "Dark Magician",
   7,
   "Spell Caster",
@@ -138,6 +220,7 @@ const darkMagician = new DuelMonsterNormal(
   2100,
   2
 );
+
 const silentWobby = new DuelMonsterSpecial(
   "Silent Wobby",
   4,
@@ -149,4 +232,18 @@ const silentWobby = new DuelMonsterSpecial(
   `During your Main Phase: You can Special Summon this card from your hand to your opponent's side of the field. When Summoned this way: Draw 1 card, and if you do, your opponent gains 2000 Life Points. You can only use this effect of "Silent Wobby" once per turn. The hand size limit of this card's controller becomes 3.`
 );
 
-console.log(silentWobby.attackPoints);
+// console.log(silentWobby);
+
+const blueEyesUltimateDragon = new DuelMonsterFusion(
+  "Blue-Eyes Ultimate Dragon",
+  12,
+  "Dragon",
+  "Light",
+  4500,
+  3800,
+  null,
+  "Blue-Eyes White Dragon + Blue-Eyes White Dragon2 + Blue-Eyes White Dragon3"
+);
+
+console.log(blueEyesWhiteDragon);
+console.log(blueEyesUltimateDragon);
