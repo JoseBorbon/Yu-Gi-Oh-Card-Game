@@ -1,30 +1,42 @@
-/*
-@func allLocations
-@func shopLoc
-@func tournamentModeArenaLoc
-@func storyModeArenaLoc
-@func battleCityLoc
-@func deckPouchLoc
-@func deckItselfLoc
-*/
+/**
+ * @func allLocations
+ * @func shopLoc
+ * @func tournamentModeArenaLoc
+ * @func storyModeArenaLoc
+ * @func battleCityLoc
+ * @func deckPouchLoc
+ * @func deckItselfLoc
+ */
 
 // All Locations Function
 function allLocations() {}
 
 // Shop Location Function
-function shopLoc() {}
+function shopLoc() {
+  console.log("At Shop");
+}
 
 // Tournament Mode Arena Location Function
-function tournamentModeArenaLoc() {}
+function tournamentModeArenaLoc() {
+  console.log("At Tournament");
+}
 
 // Story Mode Arena Location Function
-function storyModeArenaLoc() {}
+function storyModeArenaLoc() {
+  console.log("At storymode");
+}
 
 // Battle City Location Function
-function battleCityLoc() {}
+function battleCityLoc() {
+  console.log("At battlecity");
+}
 
 // Deck Pouch Location Function
-function deckPouchLoc() {}
+function deckPouch() {
+  console.log("opened deckpouch");
+}
 
 // Deck Itself Location Function
-function deckItselfLoc() {}
+function onHandDeck() {
+  console.log("opened currentDeckOnHand");
+}
