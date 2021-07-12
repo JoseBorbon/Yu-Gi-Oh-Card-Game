@@ -148,8 +148,10 @@ _This is still a work in progress and I know there is so much more we can add._
 
 ## Authors
 
+blah blah blah 
+
+- Hulkaroy Jouraboeva - [hulkaroyJouraboeva](https://github.com/hulkaroyJouraboeva)
 - Jose Borbon - [JoseBorbon](https://github.com/JoseBorbon)
 - Christina Loiacono - [christina-ml](https://github.com/christina-ml)
-- Hulkaroy Jouraboeva - [hulkaroyJouraboeva](https://github.com/hulkaroyJouraboeva)
 
 Helloooooooooo!
