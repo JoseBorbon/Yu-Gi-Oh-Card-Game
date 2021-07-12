@@ -23,7 +23,7 @@ If anyone has experience working with git in a team capacity and would like to h
 
 ## To Do
 
-- First, get [OOP](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS) out of the way. This project will win/die with the monster cards. (Jose)
+- First, get [OOP](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS) out of the way. (Jose)
 
 - Work on the battle system - am I able to use API in VS Code or not? (Jose)
 - If you want a delay to happen - [setTimeout](https://www.w3schools.com/jsref/met_win_settimeout.asp). A small pause before one of these people's turns to go. Makes game more immersive.
