@@ -10,11 +10,21 @@ const user = {
   currency: 0, //start user off with 0 of currency
   onHandDeck: [], //initialize to empty array since empty card deck starting off
   deckPouch: [], // initialize to empty array since empty card deck starting off
-  locatorCards: 0,
+  coreValues: 2, //initalized to 2, in order to gain coreValues you need to do certain things MAX is 5 
+  locatorCards: 0, // 6 needed to get access to battle city finals tournament
   level: 1,
   incrementLevel: function () {
     //if level is under 20, increment level, otherwise do nothing
     if (this.level < 20) this.level++;
+  },
+  getLifePoints: function () {
+    return this.lifePoints;
+  },
+  decreaseLifePoints: function (damage) {
+    this.getLifePoints() - damage; //used to lower life points
+  },
+  increaseLifePoints: function (heal) {
+    this.getLifePoints() + heal; //used to increase life points
   },
   completedIntro: false, //indicate whether or not user completed intro
   mileniumItems: null, // milenium items arc is in development, will work on it after base proj is done
@@ -22,11 +32,71 @@ const user = {
 };
 
 //create magic card class
-//create field spell card sub-class from magic card
-//create equip spell card sub-class from magic card
-//create ritual spell card sub-class from magic card
+
+class MagicCard {
+  constructor(name, requirement, effect) {
+    this._name = name;
+    this._type = ["magic"];
+    this._requirement = requirement;
+    this._effect = effect; // an array of a string if 1 effect only, otherwise an array of strings
+  }
+  //getters
+  get type() {
+    return this._type;
+  }
+  get requirement() {
+    return this._requirement;
+  }
+  get effect() {
+    return this._effect;
+  }
+  //setters
+  set requirement(changedRequirement) {
+    this._requirement = changedRequirement;
+  }
+  set effect(changedEffect) {
+    this._effect = changedEffect;
+  }
+}
+
+//create field magic card sub-class from magic card
+class FieldMagicCard extends MagicCard {
+  constructor(name, requirement, effect) {
+    super(name, requirement, effect);
+    this._type = ["field", "magic"];
+  }
+}
+//create equip magic card sub-class from magic card
+
+class EquipMagicCard extends MagicCard {
+  constructor(name, requirement, effect) {
+    super(name, requirement, effect);
+    this._type = ["equip", "magic"];
+  }
+}
+//create ritual magic card sub-class from magic card
+class RitualMagicCard extends MagicCard {
+  constructor(name, requirement, effect) {
+    super(name, requirement, effect);
+    this._type = ["ritual", "magic"];
+  }
+}
 
 //create trap card class - Will be used to counter specific conditions (Mostly attack though)
+class TrapCard extends MagicCard {
+  constructor(name, requirement, effect) {
+    super(name, requirement, effect);
+    this._type = ["trap"];
+  }
+}
+
+//create trap card equip sub class
+class EquipTrapCard extends MagicCard {
+  constructor(name, requirement, effect) {
+    super(name, requirement, effect);
+    this._type = ["equip", "trap"];
+  }
+}
 
 //create duelMonster class [underscore is needed for property names otherwise it'll cause stack overflow error]
 class DuelMonster {
@@ -124,7 +194,7 @@ class DuelMonsterSpecial extends DuelMonster {
       defensePoints,
       fusionID //setting to null if card does not have a fusion
     );
-    this._type = [type, "Effect"];
+    this._type = [type, "effect"];
     this._specialEffect = specialEffect.toLowerCase(); //takes in string value
   }
 
@@ -157,13 +227,8 @@ class DuelMonsterFusion extends DuelMonster {
       defensePoints,
       fusionID
     );
-    this._name = name;
-    this._starLevel = starLevel;
+    this._specialEffect = null;
     this._type = [type, "Fusion"]; //Leverage the string fusion to throw Fusion Monsters into
-    this._attribute = attribute;
-    this._attackPoints = attackPoints;
-    this._defensePoints = defensePoints;
-    this._fusionID = fusionID;
     this._fusionMaterials = fusionMaterials; //String Indicating which monsters are needed in order to summon fused monster
   }
 }
@@ -189,13 +254,7 @@ class DuelMonsterFusionSpecial extends DuelMonster {
       defensePoints,
       fusionID
     );
-    this._name = name;
-    this._starLevel = starLevel;
     this._type = [type, "Fusion", "Effect"]; //Leverage the string fusion to throw Fusion Monsters into
-    this._attribute = attribute;
-    this._attackPoints = attackPoints;
-    this._defensePoints = defensePoints;
-    this._fusionID = fusionID;
     this._fusionMaterials = fusionMaterials; //String Indicating which monsters are needed in order to summon fused monster
     this._specialEffect = specialEffect; //Array of strings in specific order in case more than 1 effect for monster
   }
@@ -221,19 +280,6 @@ const darkMagician = new DuelMonster(
   2
 );
 
-const silentWobby = new DuelMonsterSpecial(
-  "Silent Wobby",
-  4,
-  "Fish",
-  "Water",
-  1000,
-  2000,
-  null,
-  `During your Main Phase: You can Special Summon this card from your hand to your opponent's side of the field. When Summoned this way: Draw 1 card, and if you do, your opponent gains 2000 Life Points. You can only use this effect of "Silent Wobby" once per turn. The hand size limit of this card's controller becomes 3.`
-);
-
-// console.log(silentWobby);
-
 const blueEyesUltimateDragon = new DuelMonsterFusion(
   "Blue-Eyes Ultimate Dragon",
   12,
@@ -245,5 +291,9 @@ const blueEyesUltimateDragon = new DuelMonsterFusion(
   "Blue-Eyes White Dragon + Blue-Eyes White Dragon2 + Blue-Eyes White Dragon3"
 );
 
-console.log(blueEyesWhiteDragon);
-console.log(blueEyesUltimateDragon);
+// console.log(blueEyesUltimateDragon.defensePoints);
+
+// const bigOcean = new FieldMagicCard("Big Ocean");
+
+// const blackLusterRitual = new RitualMagicCard('black luster ritual', ['this card is used to ritual summon', 'BLACK LUSTER SOLDER', 'Tribute monsters whose total levels are greater than or equal to 8'], null);
+
