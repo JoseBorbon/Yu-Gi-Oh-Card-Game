@@ -74,7 +74,6 @@ class FieldMagicCard extends MagicCard {
   }
 }
 //create equip magic card sub-class from magic card
-
 class EquipMagicCard extends MagicCard {
   constructor(name, requirements, effect) {
     super(name, requirements, effect);
@@ -592,6 +591,5 @@ const blueEyesUltimateDragon = new DuelMonsterFusion(
   "Blue-Eyes White Dragon + Blue-Eyes White Dragon2 + Blue-Eyes White Dragon3"
 );
 
-console.log(blueEyesUltimateDragon);
-
-console.log(amandasNaggingCats);
+//   console.log(blueEyesUltimateDragon);
+//   console.log(amandasNaggingCats);
