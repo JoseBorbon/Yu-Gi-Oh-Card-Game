@@ -6,6 +6,7 @@ function draw(hand, deck, numOfCardsToDraw) {//should be usable for most draw ca
         hand.push(deck.pop());
     }
 }
+
 function displayBoard(hand, playerField, enemyField,fieldSpell) {
     //can prob be ran inside a log function if it's to be played in a terminal
     let view = `Field State:\n
@@ -17,6 +18,29 @@ function displayBoard(hand, playerField, enemyField,fieldSpell) {
     ${hand}`;
     return view;
 }
+
+function shuffle(array) {
+    let m = array.length, t, i;
+    // While there remain elements to shuffle…
+    while (m) {
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+      // And swap it with the current element.
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+    return array;
+  }
+
+function attack(attacker, defender) {
+    //check position of attacker and defender
+    //check effects/spells
+    //compare point values
+    //destory/pop if defender is weaker, or if attacker is weaker than attack mode defender
+    //if attacker wins return point dif
+}
+
 //probably want a function or some way to check card descriptions
 
 class Game {
@@ -33,7 +57,6 @@ class Game {
         this._field2 = [[],[]],//add limitations for card types and sizes later
         this.fieldSpell = []
     }
-
 
     //methods
     itsTimeToDuel() {
@@ -73,5 +96,4 @@ class Game {
             i++
         }
     }
-    
 }
