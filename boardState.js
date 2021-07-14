@@ -5,7 +5,7 @@ function draw(hand, deck, n) {//should be usable for most draw cards as well
         hand.push(deck.pop())
     }
 }
-function display(hand, playerField, enemyField,fieldSpell) {
+function displayBoard(hand, playerField, enemyField,fieldSpell) {
     //can prob be ran inside a log function if it's to be played in a terminal
     let view = `Field State:\n
     ${enemyField}\n
