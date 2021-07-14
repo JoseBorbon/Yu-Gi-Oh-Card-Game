@@ -153,4 +153,4 @@ _This is still a work in progress and I know there is so much more we can add._
 - Hulkaroy Jouraboeva - [hulkaroyJouraboeva](https://github.com/hulkaroyJouraboeva)
 - Hector Ilarraza - [HectorIlarraza](https://github.com/HectorIlarraza)
 - Benny Zheng - [BennyZ3](https://github.com/BennyZ3)
-- [add-your-name-here](https://github.com/yourUsername)
+- Read about me! - [Cookie Monster](https://en.wikipedia.org/wiki/Cookie_Monster)
