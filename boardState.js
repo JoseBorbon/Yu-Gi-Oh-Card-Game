@@ -16,16 +16,36 @@ function display(hand, playerField, enemyField,fieldSpell) {
     ${hand}`
     return view
 }
+function shuffle(array) {
+    let m = array.length, t, i;
+    // While there remain elements to shuffle…
+    while (m) {
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+      // And swap it with the current element.
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+    return array;
+  }
+function attack(attacker, defender) {
+    //check position of attacker and defender
+    //check effects/spells
+    //compare point values
+    //destory/pop if defender is weaker, or if attacker is weaker than attack mode defender
+    //if attacker wins return point dif
+    
+}
 //probably want a function or some way to check card descriptions
 
 class Game {
     constructor(user1, user2) {
-        this._deck1 = user1.onHandDeck,
-        this._deck2 = user2.onHandDeck,
+        this._deck1 = shuffle(user1.onHandDeck),//shuffle added
+        this._deck2 = Shuffle(user2.onHandDeck),
         this._lifePts1 = user1.lifePoints,
         this._lifePts2 = user2.lifePoints,
         //insert fusion/ritual deck as needed
-        //insert shuffle function
         this._hand1 = [],
         this._hand2 = [],
         this._field1 = [[],[]],//[[monsters],[spells]]
