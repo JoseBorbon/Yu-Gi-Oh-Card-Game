@@ -1,7 +1,6 @@
 //create user object which will end up storing all our values
 /*
 Name, LifePoints, Currency, Deck Pouch, On Hand Deck(Max 40 Cards Held), locator cards, level, increment level, milenium items, milenium pieces
-
 */
 
 const user = {
@@ -32,93 +31,6 @@ const user = {
   mileniumItems: null, // milenium items arc is in development, will work on it after base proj is done
   mileniumPieces: null, // will be a part of milenium items arc
 };
-
-//create magic card class
-
-class MagicCard {
-  constructor(name, requirements, effect) {
-    this._name = name;
-    this._type = ["magic"];
-    this._requirements = requirements;
-    this._effect = effect; // an array of a string if 1 effect only, otherwise an array of strings
-    this._faceUp = true;
-  }
-  //getters
-  get type() {
-    return this._type; //returns the type in an array
-  }
-  get requirements() {
-    return this._requirements; //returns an array back in chronological order if there are more conditions in effect
-  }
-  get effect() {
-    return this._effect; //returns an array back in chronological order if there are more conditions in the effect
-  }
-  //setters
-  set requirements(changedRequirements) {
-    this._requirements = changedRequirements; //may not be used much if at all but placing here in case requirements end up changing from the result of using a card
-  }
-  set effect(changedEffect) {
-    this._effect = changedEffect; //may not be used much if at all
-  }
-  //methods
-  setfaceDown() {
-    this._faceUp = false; //set card to facedown
-  }
-}
-
-//create field magic card sub-class from magic card
-class FieldMagicCard extends MagicCard {
-  constructor(name, requirements, effect) {
-    super(name, requirements, effect);
-    this._type = ["field", "magic"];
-  }
-}
-//create equip magic card sub-class from magic card
-
-class EquipMagicCard extends MagicCard {
-  constructor(name, requirements, effect) {
-    super(name, requirements, effect);
-    this._type = ["equip", "magic"];
-  }
-}
-//create ritual magic card sub-class from magic card
-class RitualMagicCard extends MagicCard {
-  constructor(name, requirements, effect) {
-    super(name, requirements, effect);
-    this._type = ["ritual", "magic"];
-  }
-}
-//create continuous magic card sub-class from magic card
-class ContinuousMagicCard extends MagicCard {
-  constructor(name, requirements, effect) {
-    super(name, requirements, effect);
-    this._type = ["continuous", "magic"];
-  }
-}
-
-//create trap card class - Will be used to counter specific conditions (Mostly attack though)
-class TrapCard extends MagicCard {
-  constructor(name, requirements, effect) {
-    super(name, requirements, effect);
-    this._type = ["trap"];
-  }
-}
-
-//create trap card equip sub class
-class EquipTrapCard extends MagicCard {
-  constructor(name, requirements, effect) {
-    super(name, requirements, effect);
-    this._type = ["equip", "trap"];
-  }
-}
-
-//create continuous trap card sub class from magic card
-class ContinousTrapCard extends MagicCard {
-  constructor(name, requirements, effect) {
-    super(name, requirements, effect);
-    this._type = ["continous", "trap"];
-  }
-}
 
 //create duelMonster class [underscore is needed for property names otherwise it'll cause stack overflow error]
 class DuelMonster {
@@ -289,6 +201,7 @@ class DuelMonsterRitual extends DuelMonster {
   }
 }
 
+/*
 //magic cards - done
 const swordsOfRevealingLight = new MagicCard(
   "Swords Of Revealing Light",
@@ -559,6 +472,7 @@ const maskOfRestrict = new ContinousTrapCard("MASK OF RESTRICT", null, [
 ]);
 
 //equip trap cards - NONE FOUND SO FAR MAY END UP REMOVING CLASS
+*/
 
 //monster cards Summon Below
 const blueEyesWhiteDragon = new DuelMonster(
@@ -594,4 +508,4 @@ const blueEyesUltimateDragon = new DuelMonsterFusion(
 
 console.log(blueEyesUltimateDragon);
 
-console.log(amandasNaggingCats);
+// console.log(amandasNaggingCats);
