@@ -33,7 +33,9 @@ function shuffle(array) {
     return array;
 }
 
-function attack(attacker, defender) {
+function attack(attacker, defender, user1, user2) {//prob to be selected with this._field1[0][n] atm
+    let lp1 = user1._lifePoints
+    let lp2 = user2._lifePoints
     //check position of attacker and defender
     //currently don't see an indicator for position other than facedown
     //allow only if selected monster is in attack mode
@@ -42,24 +44,29 @@ function attack(attacker, defender) {
     if (defender._faceUp === true) {//don't think I see an atk or def mode item
         let dif = (attacker._attackPoints - defender._attackPoints)
         if (dif > 0) {
-            //destroy def and affect lp
+            //destroy def and affect enemy lp
+            lp2 -= dif
         }else if (dif === 0) {
             //destroy both
         }else {
             //destroy self and affect own lp
+            lp1 -= dif
         }
     }else {
         let dif = (attacker._attackPoints - defender._defensePoints)
         if (dif > 0) {
-            //destroy def and affect lp
+            //destroy def
         }else if (dif === 0) {
             //defender becomes faceup
         }else {
             //affect own lp, no destroy
+            lp1 -= dif
         }
+        
     }
     //destory/pop if defender is weaker, or if attacker is weaker than attack mode defender
-    //if attacker wins return point dif
+    //return new lp values if any
+    return (user1._lifePoints = lp1, user2.lifePoints = lp2)
 }
 
 //probably want a function or some way to check card descriptions
