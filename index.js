@@ -2,35 +2,12 @@
 /*
 Name, LifePoints, Currency, Deck Pouch, On Hand Deck(Max 40 Cards Held), locator cards, level, increment level, milenium items, milenium pieces
 */
+//importing magicCards object 
+const imported = require('./Cards/Magic/magicCard');
+const magicCardStorage = imported.magicCardStorage;
+console.log(magicCardStorage['dark hole'.toUpperCase()]);
 
-const user = {
-  name: null, //name will be changed at beginning of story
-  lifePoints: 4000,
-  currency: 0, //start user off with 0 of currency
-  onHandDeck: [], //initialize to empty array since empty card deck starting off
-  deckPouch: [], // initialize to empty array since empty card deck starting off
-  coreValues: 2, //initalized to 2, in order to gain coreValues you need to do certain things MAX is 5
-  locatorCards: 0, // 6 needed to get access to battle city finals tournament
-  level: 1,
-  incrementLevel: function () {
-    //if level is under 20, increment level, otherwise do nothing
-    if (this.level < 20) this.level++;
-  },
-  getLifePoints: function () {
-    return this.lifePoints;
-  },
-  decreaseLifePoints: function (damage) {
-    if (this.getLifePoints() - damage <= 0) this.lifePoints = 0;
-    //edge case for if life points are less than or equal to 0, to be 0
-    else this.lifePoints = this.getLifePoints() - damage; //used to lower life points
-  },
-  increaseLifePoints: function (heal) {
-    this.lifePoints = this.getLifePoints() + heal; //used to increase life points
-  },
-  completedIntro: false, //indicate whether or not user completed intro
-  mileniumItems: null, // milenium items arc is in development, will work on it after base proj is done
-  mileniumPieces: null, // will be a part of milenium items arc
-};
+const user = 
 
 //create duelMonster class [underscore is needed for property names otherwise it'll cause stack overflow error]
 class DuelMonster {
@@ -506,6 +483,6 @@ const blueEyesUltimateDragon = new DuelMonsterFusion(
   "Blue-Eyes White Dragon + Blue-Eyes White Dragon2 + Blue-Eyes White Dragon3"
 );
 
-console.log(blueEyesUltimateDragon);
+// console.log(blueEyesUltimateDragon);
 
 // console.log(amandasNaggingCats);
