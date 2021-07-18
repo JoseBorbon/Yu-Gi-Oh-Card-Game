@@ -11,14 +11,8 @@ const imported = require("./Cards/Magic/magicCard");
 const magicCardStorage = imported.magicCardStorage;
 console.log(magicCardStorage["dark hole".toUpperCase()]);
 
-
-
-
-
-
-
-const duelist2 = JSON.parse(fs.readFileSync('duelist.json'));
-console.log(duelist2.onHandDeck[0]);
+//import duelist user file and convert from JSON to object
+const duelist2 = JSON.parse(fs.readFileSync("duelist.json"));
 
 //create duelMonster class [underscore is needed for property names otherwise it'll cause stack overflow error]
 class DuelMonster {
