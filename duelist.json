@@ -1,0 +1,18 @@
+{
+  "name": null,
+  "lifePoints": 4000,
+  "currency": 0,
+  "onHandDeck": [],
+  "deckPouch": [],
+  "coreValues": 2,
+  "locatorCards": 0,
+  "level": 1,
+  "experiencePoints": 0,
+  "completedIntro": false,
+  "battleCityReady": false,
+  "battleCityFinalsReady": false,
+  "completedStory": false,
+  "endGameTournamentModeReady": false,
+  "mileniumItems": null,
+  "mileniumPieces": null
+}
