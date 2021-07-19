@@ -1,0 +1,20 @@
+* First: You have to understand the problem
+  *IIFE that will begin with starting people in tutorial and give option to leave tutorial and go to mainland
+Can use a regular function (you create 1 function & within that function you have a while loop that points back to the first thing...we give the user choices.
+Give them an option to input of where to go. Once they choose an option - go into a store, or go back, to the first function that they currently were at.
+Nested loops with functions in them
+If we invoke this location, otherwise we invoke this other location.
+So..you're currently here: where would you like to go next? Using a [While Loop](https://www.w3schools.com/js/js_loop_while.asp) - to keep on going.) Or to exit game, change the variable to Exit Game.
+
+// #1 - create array of locations
+// create a tutorial = menu (MDN IIFE "Module Pattern")?
+
+// line #2 - create an immediately invoked function expression, give the option to print the tutorial
+  // option to leave tutorial (true or false?)
+  // if false, continue with tutorial
+  // if true, direct to mainland 
+
+
+// line #3 - create a function within IIFE function? 
+  // create a loop within a function that iterates through an array of menu(tutorial), and 6 locations.
+  // give the user options of the elements of the array (use promptCL)
