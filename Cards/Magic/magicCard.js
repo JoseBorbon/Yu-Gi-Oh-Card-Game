@@ -1,90 +1,136 @@
 const { CardEffect } = require("../parentCardClasses");
 
-//function to store all cards in
+/** Leveraging COVE to accomplish task of transporting an object from point A to B without breaking separation of concerns
+ *
+ * @returns {function} - function will be used to create persistent lexical scoped referenced data
+ * for transporting cache object from one file to another utilizing module exports
+ */
 function storeMagicCards() {
   class MagicCard extends CardEffect {
-    constructor(name, requirements, effect) {
-      super(name, requirements, effect);
+    constructor(name, requirements, effects) {
+      super(name, requirements, effects);
       this._type = ["magic"];
     }
   }
 
-  //assign a cache to store all magic cards being created inside of function
+  //assign a memo to store all magic cards being created by invoking returned function
   const magicCardsCache = {};
 
-  /** Stores magic card inside of object
-   * Appends a fruit to an array of fruits and returns the array.
+  /** Stores magic card inside of cache object
    * @param {string} magicCardName - name of magic card, represented as a string
    * @param {string[]} requirements - Requirement/ Requirements represented as an array of strings
-   * @param {string[]} effect - Effect / Effects, represented as an array of strings
+   * @param {string[]} effects - Effect / Effects, represented as an array of strings
    * @returns {object} - Recently created object || existing value(object) inside of cache object
    */
-  return function (magicCardName, requirements, effect) {
+  return function (magicCardName, requirements, effects) {
     //if magic card name is inside of the object already return value
-    if (magicCardsCache[magicCardName.toUpperCase()]) {
+    magicCardName = magicCardName.toUpperCase();
+    // console.log(magicCardName.toUpperCase());
+    if (magicCardsCache[magicCardName]) {
       return magicCardsCache[magicCardName];
     }
 
     //not a-zA-Z , used to filter out strings that contain numbers or special characters in them
-    const regex = /[^a-zA-Z\s]/;
+    const regex = /[^a-zA-Z0-9\s]/;
 
     //edge-cases:
     //if magicCardName is not a string or is a string that contains numbers or special characters, throw an Eval Error
-    if(magicCardName.toUpperCase() === "GET ALL CARDS") return magicCardsCache;
+    if (magicCardName === "GET ALL CARDS") return magicCardsCache;
     if (typeof magicCardName !== "string" || regex.test(magicCardName)) {
       throw new EvalError("magicCardName must be a string and not contain numbers or special characters");
-      //if requirements is not of array datatype and not null throw an error
+      //otherwise if requirements is not of array datatype and not null throw an error
     } else if (!Array.isArray(requirements) && requirements !== null) {
       throw new TypeError("requirements is not an array datatype or null");
-      //if effect is not of array datatype throw an error
-    } else if (!Array.isArray(effect)) {
+      //otherwise if effects is not of array datatype throw an error
+    } else if (!Array.isArray(effects)) {
       throw new TypeError("effects is not an array datatype or null");
-      //if requirements is not null(intentionally blank) go inside of the else if block
+      //otherwise if requirements is not null(intentionally blank) go inside of the else if block
     } else if (requirements !== null) {
-      //if requirements at index 0 is not a string or has numbers and special characters, throw an error
-      if (requirements[0] !== "string" || regex.test(requirements[0])) {
+      //if requirements at index 0 is not a string and does not have numbers and special characters other than space, throw an error
+      if (requirements[0] !== "string" && regex.test(requirements[0])) {
         throw new EvalError("requirements must be an array of strings and not contain numbers or special characters");
       }
-      //if effect at index 0 is not a string or has numbers and special characters, throw an error --FIX
     }
-    if (typeof effect[0] !== "string" || regex.test(effect[0])) {
+    //if effects at index 0 is not a string or has numbers and special characters other than space
+    if (typeof effects[0] !== "string" || regex.test(effects[0])) {
       throw new EvalError("effects must be an array of strings and not contain numbers or special characters");
     }
-    //if requirements is not an array of strings or null, and string contains special characters or numbers
-    // effect is not an array of strings, and string contains special characters or numbers
 
-    //iterate through array if there is more than 1 string in array
+    //declare a flag variable to determine if requirements or effects has a non string in their index as we lowercase strings.
+    let indexOfReqsAndEffectsAreValid = true;
+    //iterate through array if requirements is not null and there is more than 1 string in array
+    if (requirements !== null && requirements.length > 1) {
+      //iterate through array
+      for (let i = 0; i < requirements.length; i++) {
+        //if current requirement is not a strng, set flag variable to false and break out of loop
+        if (typeof requirements[i] !== "string") {
+          indexOfReqsAndEffectsAreValid = false;
+          break;
+        }
+        //mutate current index to evaluated result of lower casing current requirement
+        requirements[i] = requirements[i].toLowerCase();
+      }
+    }
 
-    //if string at index evaluates to be a number, break and return error
-    //if string at index evaluates to be special character, break and return error
+    if (effects.length > 0) {
+      //iterate through array
+      for (let i = 0; i < effects.length; i++) {
+        //if current requirement is not a strng, set flag variable to false and break out of loop
+        if (typeof effects[i] !== "string") {
+          indexOfReqsAndEffectsAreValid = false;
+          break;
+        }
+        //mutate current index to evaluated result of lower casing current effect
+        effects[i] = effects[i].toLowerCase();
+      }
+    }
 
-    //lowercase magicCardName, requirements, effect
+    if (!indexOfReqsAndEffectsAreValid) throw new EvalError("all requirements and effects must be of string data type");
+
+    //uppercase name of magic card
     magicCardName = magicCardName.toUpperCase();
-    //if requirements is null just keep it null, otherwise iterate through and lowercase requirements
-    requirements = !requirements ? null : requirements.map((el) => el.toLowerCase());
-
-    effect = effect.map((el) => el.toLowerCase());
 
     // otherwise store the key in cache and assign it an object as value
-    magicCardsCache[magicCardName] = new MagicCard(magicCardName, requirements, effect);
+    magicCardsCache[magicCardName] = new MagicCard(magicCardName, requirements, effects);
     return magicCardsCache[magicCardName];
   };
 }
 
 const magicCards = storeMagicCards();
 /* ------- ALL CARDS ADD BELOW THIS LINE ------- */
-magicCards("dark hole", null, ["destroyallmonstersonthefield"]);
-magicCards("Swords Of Revealing Light", null,  [
+
+magicCards("dark hole", null, ["destroy all monsters on the field"]);
+magicCards("Swords Of Revealing Light", null, [
   "Flip All Monsters Opponent Controls Face Up",
   "Card Remains on Field for 3 of your opponents turns",
   "While card is on field monsters your opponent controls cannot declare an attack",
 ]);
-// console.log(magicCards("dark hole"));
+magicCards(
+  "CHANGE OF HEART",
+  ["opponent must have 1 monster card on the field"],
+  ["target 1 monster your opponent controls", "take control of the monster until the end of user phase"]
+);
+magicCards(
+  "BRAIN CONTROL",
+  ["opponent must have 1 monster card on the field", "selected card must be face-up"],
+  ["target 1 monster your opponent controls", "take control of the monster until the end of user phase"]
+);
+magicCards("GRACEFUL CHARITY", null, ["Draw 3 cards from deck", "discard 2 cards from deck"]);
+magicCards(
+  "POLYMERIZATION",
+  ["must have fusion material monsters in hand or on own side of the field that are listed by fusion monster card"],
+  ["special summon 1 Fusion Monster from your fusion deck"]
+);
+magicCards("MONSTER REBORN", null, ["Target 1 monster in either players graveyard"]);
 
-const magicCardStorage = magicCards('get all cards');
+/* ------- ADD ALL CARDS ABOVE THIS LINE ------- */
+//used to get all cards within memo
+const magicCardStorage = magicCards("get all cards");
 
-// console.log(myMagicCards);
+// line 123 - used to log the entire magicCardStorage
+// console.log(magicCardStorage);
 
-// magicCards("darkHole");
+//line 126 - used to test whether or not dark hole magic card was already created
+// magicCards("dark hole");
 
 exports.magicCardStorage = magicCardStorage;
