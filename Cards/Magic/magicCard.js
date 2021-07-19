@@ -127,10 +127,10 @@ magicCards("MONSTER REBORN", null, ["Target 1 monster in either players graveyar
 //used to get all cards within memo
 const magicCardStorage = magicCards("get all cards");
 
-// line 123 - used to log the entire magicCardStorage
+// line below - used to log the entire magicCardStorage
 // console.log(magicCardStorage);
 
-//line 126 - used to test whether or not dark hole magic card was already created
-// magicCards("dark hole");
+//line below - used to test whether or not dark hole magic card was already created
+// console.log("Card is already here:",magicCards("dark hole"));
 
 exports.magicCardStorage = magicCardStorage;

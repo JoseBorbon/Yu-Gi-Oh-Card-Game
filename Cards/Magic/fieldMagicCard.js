@@ -183,10 +183,10 @@ fieldMagicCards(
 //used to get all cards within memo
 const fieldMagicCardStorage = fieldMagicCards("get all cards");
 
-// line 187 - used to log the entire fieldMagicCardStorage
+// line below - used to log the entire fieldMagicCardStorage
 // console.log(fieldMagicCardStorage);
 
-//line 190 - used to test whether or not field magic card was already created
-// fieldmagicCards("yami");
+//line below - used to test whether or not field magic card was already created
+// console.log("Card is already here:",fieldMagicCards("yami"));
 
 exports.fieldMagicCardStorage = fieldMagicCardStorage;
