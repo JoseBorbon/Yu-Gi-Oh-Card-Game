@@ -31,7 +31,7 @@ function storeMagicCards() {
     }
 
     //not a-zA-Z , used to filter out strings that contain numbers or special characters in them
-    const regex = /[^a-zA-Z0-9\s]/;
+    const regex = /[^a-zA-Z0-9-\s]/;
 
     //edge-cases:
     //if magicCardName is not a string or is a string that contains numbers or special characters, throw an Eval Error
