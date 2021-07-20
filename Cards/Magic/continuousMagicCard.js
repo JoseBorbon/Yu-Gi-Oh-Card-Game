@@ -1,4 +1,4 @@
-const { CardEffect } = require("../parentCardClasses");
+const { CardEffectCreator } = require("../parentCardClasses");
 
 /** Leveraging COVE to accomplish task of transporting an object from point A to B without breaking separation of concerns
  *
@@ -6,8 +6,8 @@ const { CardEffect } = require("../parentCardClasses");
  * for transporting cache object from one file to another utilizing module exports
  */
 function storeContinousMagicCards() {
-  //create continuous magic card sub-class from CardEffect
-  class ContinuousMagicCard extends CardEffect {
+  //create continuous magic card sub-class from CardEffectCreator
+  class ContinuousMagicCard extends CardEffectCreator {
     constructor(name, requirements, effect) {
       super(name, requirements, effect);
       this._type = ["continuous", "magic"];

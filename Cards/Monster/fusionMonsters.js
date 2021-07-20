@@ -1,8 +1,8 @@
-const { DuelMonster } = require("../parentCardClasses");
+const { DuelMonstersCreator } = require("../parentCardClasses");
 
 //create an cache to store monsters and a cache that will filter type if user provides an invalid type
 
-class DuelMonsterFusion extends DuelMonster {
+class DuelMonsterFusion extends DuelMonstersCreator {
   constructor(
     name,
     starLevel,
@@ -28,7 +28,7 @@ class DuelMonsterFusion extends DuelMonster {
   }
 }
 
-class DuelMonsterFusionSpecial extends DuelMonster {
+class DuelMonsterFusionSpecial extends DuelMonsters {
   constructor(
     name,
     starLevel,

@@ -1,4 +1,4 @@
-const { CardEffect } = require("../parentCardClasses");
+const { CardEffectCreator } = require("../parentCardClasses");
 
 /** Leveraging COVE to accomplish task of transporting an object from point A to B without breaking separation of concerns
  *
@@ -6,7 +6,8 @@ const { CardEffect } = require("../parentCardClasses");
  * for transporting cache object from one file to another utilizing module exports
  */
 function storeMagicCards() {
-  class MagicCard extends CardEffect {
+  //create magic card sub-class from CardEffectCreator
+  class MagicCard extends CardEffectCreator {
     constructor(name, requirements, effects) {
       super(name, requirements, effects);
       this._type = ["magic"];
