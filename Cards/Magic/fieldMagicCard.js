@@ -1,4 +1,4 @@
-const { CardEffect } = require("../parentCardClasses");
+const { CardEffectCreator } = require("../parentCardClasses");
 
 /** Leveraging COVE to accomplish task of transporting an object from point A to B without breaking separation of concerns
  *
@@ -6,8 +6,8 @@ const { CardEffect } = require("../parentCardClasses");
  * for transporting cache object from one file to another utilizing module exports
  */
 function storeFieldMagicCards() {
-  //create field magic card sub-class from CardEffect
-  class FieldMagicCard extends CardEffect {
+  //create field magic card sub-class from CardEffectCreator
+  class FieldMagicCard extends CardEffectCreator {
     constructor(name, requirements, effect, buffedMonsterTypes, nerfedMonsterTypes) {
       super(name, requirements, effect);
       this._buffedMonsterTypes = buffedMonsterTypes; // array of types(string format) or opponent
@@ -183,10 +183,10 @@ fieldMagicCards(
 //used to get all cards within memo
 const fieldMagicCardStorage = fieldMagicCards("get all cards");
 
-// line 187 - used to log the entire fieldMagicCardStorage
+// line below - used to log the entire fieldMagicCardStorage
 // console.log(fieldMagicCardStorage);
 
-//line 190 - used to test whether or not field magic card was already created
-// fieldmagicCards("yami");
+//line below - used to test whether or not field magic card was already created
+// console.log("Card is already here:",fieldMagicCards("yami"));
 
 exports.fieldMagicCardStorage = fieldMagicCardStorage;

@@ -1,13 +1,5 @@
-class DuelMonster {
-  constructor(
-    name,
-    starLevel,
-    type,
-    attribute,
-    attackPoints,
-    defensePoints,
-    fusionID
-  ) {
+class DuelMonstersCreator {
+  constructor(name, starLevel, type, attribute, attackPoints, defensePoints, fusionID, monsterCardRarity) {
     this._name = name;
     this._starLevel = starLevel; //star level is amount of stars on top right of card
     this._type = [type];
@@ -15,6 +7,7 @@ class DuelMonster {
     this._attackPoints = attackPoints;
     this._defensePoints = defensePoints;
     this._fusionID = fusionID;
+    this._monsterCardRarity = monsterCardRarity;
     this._specialEffect = null;
     this._onField = false;
     this._inGraveyard = false;
@@ -68,13 +61,15 @@ class DuelMonster {
 
   //methods
   setfaceDown() {
-    this.faceUp = false;
+    this._faceUp = false;
+  }
+  monsterChant() {
+    return `I summon ${this._name}`;
   }
 }
 
-
-//create magic card class
-class CardEffect {
+//create CardEffectCreator class
+class CardEffectCreator {
   constructor(name, requirements, effect) {
     this._name = name;
     this._requirements = requirements;
@@ -104,7 +99,7 @@ class CardEffect {
   }
 }
 
-module.exports = { DuelMonster, CardEffect };
+module.exports = { DuelMonstersCreator, CardEffectCreator };
 
 //My goal is to use seperation of concerns to get all these objects created in specific places
 
@@ -112,7 +107,3 @@ module.exports = { DuelMonster, CardEffect };
 //one location to another and have the closed in function take in an argument
 // which will be a key and then to access a monster or card in a function must
 //use key
-
-
-
-

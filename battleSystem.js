@@ -33,7 +33,7 @@ const user = {
   mileniumPieces: null, // will be a part of milenium items arc
 };
 
-//magic cards - done
+/*magic cards - done and added to magicCardJS 
 const swordsOfRevealingLight = new MagicCard(
   "Swords Of Revealing Light",
   null,
@@ -85,8 +85,9 @@ const darkHole = new MagicCard("DARK HOLE", null, [
 const monsterReborn = new MagicCard("MONSTER REBORN", null, [
   "Target 1 monster in either player's graveyard",
 ]);
+*/
 
-//field magic cards - done
+/* field magic cards - done and added to fieldMagicCardJS
 const fusionGate = new FieldMagicCard("FUSION GATE", null, [
   "As long as card is on field, monsters can be fused without polymerization card",
 ]);
@@ -107,8 +108,10 @@ const yami = new FieldMagicCard("YAMI", null, [
 const mountain = new FieldMagicCard("MOUNTAIN", null, [
   "all dragon, winged beast, and thunder monsters on the field gain 200 attack and defense points",
 ]);
+*/
 
-//continuous magic cards - done
+/*
+continuous magic cards - done and added to continuousMagicCardJS
 const infiniteCards = new ContinuousMagicCard("INFINITE CARDS", null, [
   "As long as infinite cards is on the field, hand limit of 6 is removed",
 ]);
@@ -130,7 +133,7 @@ const darkRoomOfNightmare = new ContinuousMagicCard(
   [
     "each time opponent takes damage from a spell or trap card effect, inflict 300 damage to opponent",
   ]
-);
+); 
 
 const attrition = new ContinuousMagicCard("ATTRITION", null, [
   "If opponents monster is not destroyed by battle, it loses attack equal to the battle damage", //what is battle damage? Net Difference?
@@ -138,11 +141,11 @@ const attrition = new ContinuousMagicCard("ATTRITION", null, [
 
 const toonWorld = new ContinuousMagicCard("TOON WORLD", null, [
   "Pay 1000 life points to activate the card on field",
-]);
+]); 
 
-// spiral spear strike to add later
+*/
 
-//equip magic cards - done
+/*equip magic cards - done and added to equipMagicCardsJS
 const blackPendant = new EquipMagicCard(
   "BLACK PENDANT",
   ["at least 1 monster must be on your side of the field"],
@@ -182,9 +185,9 @@ const salamandra = new EquipMagicCard(
   "SALAMANDRA",
   ["Monster card being equipped this card must be FIRE type"],
   ["Gain 700 Attack Points"]
-);
+); */
 
-//ritual magic cards
+/* ritual magic cards - done and added to ritualMagicCardJS
 const blackLusterRitual = new RitualMagicCard(
   "BLACK LUSTER RITUAL",
   [
@@ -226,104 +229,13 @@ const whiteDragonRitual = new RitualMagicCard(
     "Summon Paladin Of White Dragon onto the field and move tribute cards to graveyard",
   ]
 );
+*/
 
-//trap cards - done
-const mirrorForce = new TrapCard(
-  "MIRROR FORCE",
-  ["opponent has to declare an attack"],
-  [
-    "destoy all attack position monsters opponent controls on their side of the field",
-  ]
-);
-
-const lightForceSword = new TrapCard(
-  "LIGHTFORCE SWORD",
-  ["opponent must at least have 1 card in hand"],
-  [
-    "randomly select a card from opponents hand and remove it from play face-down for 3 opponent turns",
-    "after 4th turn, put card back in opponents hand ",
-  ]
-);
-
-const magicCylinder = new TrapCard(
-  "MAGIC CYLINDER",
-  ["opponent must declare an attack"],
-  [
-    "negate attack using this card",
-    "inflict damage to opponent equal to monsters attack points",
-  ]
-);
-
-const magicJammer = new TrapCard(
-  "MAGIC JAMMER",
-  ["opponent must activate spell card"],
-  [
-    "negate spell card activation and send to graveyard unless opponent has a counter trap card on field",
-  ]
-);
-
-const maskOfWeakness = new TrapCard(
-  "MASK OF WEAKNESS",
-  ["opponent monster must attack"],
-  [
-    "decrease the attack points of opponents attacking monster by 700 until the end of opponents turn",
-  ]
-);
-
-//continuous trap cards - done
-const spellBindingCircle = new ContinousTrapCard(
-  "SPELLBINDING CIRCLE",
-  ["1 monster must be on opponents side of the field"],
-  [
-    "selected monster on opponents side is unable to attack or change it's battle position",
-  ]
-);
-
-const imperialOrder = new ContinousTrapCard("IMPERIAL ORDER", null, [
-  "negate all spell effects on the field",
-  "during standby phase, lose 700 life points or destroy this card", //when it's players stand by phase, user loses 700 life points and when it's npcs stand by phase, opponent loses 700 life points
-]);
-
-const gravityBind = new ContinousTrapCard("GRAVITY BIND", null, [
-  "Level 4 or higher monsters cannot attack",
-]);
-
-const callOfTheHaunted = new ContinousTrapCard(
-  "CALL OF THE HAUNTED",
-  ["must have at least 1 monster in own graveyard"],
-  [
-    "special summon monster card from graveyard back onto field in attack mode",
-    "when monster gets destroyed, destroy this card and send to graveyard",
-    "otherwise if trap card gets destroyed, then send monster back to graveyard that was summoned using the card",
-  ]
-);
-
-const maskOfRestrict = new ContinousTrapCard("MASK OF RESTRICT", null, [
-  "monster cards cannot be tributed",
-]);
-
-//equip trap cards - NONE FOUND SO FAR MAY END UP REMOVING CLASS
+//trap cards - done added to trapCardJS
+//continuous trap cards - done added to continuousTrapCardJS
 
 //monster cards Summon Below
-const blueEyesWhiteDragon = new DuelMonster(
-  "Blue-Eyes White Dragon",
-  8,
-  "Dragon",
-  "Light",
-  3000,
-  2500,
-  1
-);
 
-const darkMagician = new DuelMonster(
-  "Dark Magician",
-  7,
-  "Spell Caster",
-  "Dark",
-  2500,
-  2100,
-  2
-);
 
 const blueEyesUltimateDragon = new DuelMonsterFusion(
   "Blue-Eyes Ultimate Dragon",
