@@ -27,6 +27,7 @@ class DuelMonster {
     this._specialEffect = null;
     this._onField = false;
     this._inGraveyard = false;
+    this._attackPos = true //false for defense
     this._faceUp = true; //set to false for face-down
   }
   //getters

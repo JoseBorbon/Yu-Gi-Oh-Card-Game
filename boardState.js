@@ -33,15 +33,23 @@ function shuffle(array) {
     return array;
 }
 
-function attack(attacker, defender, user1, user2) {//prob to be selected with this._field1[0][n] atm
+function attack(attacker, defender, user1, user2, field1, field2) {//prob to be selected with this._field1[0][n] atm
     let lp1 = user1._lifePoints
     let lp2 = user2._lifePoints
     //check position of attacker and defender
-    //currently don't see an indicator for position other than facedown
     //allow only if selected monster is in attack mode
+    if (attacker._attackPos === true) {
+        continue
+    }else {return "invalid monster selected"}
     //check effects/spells
+    if (field2[1]){
+        //prompt defender for trap/magic
+    }
+    if (field1[1]) {
+        //prompt attacker for trap/magic cards
+    }
     //compare point values
-    if (defender._faceUp === true) {//don't think I see an atk or def mode item
+    if (defender._attackPos === true) {//don't think I see an atk or def mode item
         let dif = (attacker._attackPoints - defender._attackPoints)
         if (dif > 0) {
             //destroy def and affect enemy lp
@@ -63,7 +71,7 @@ function attack(attacker, defender, user1, user2) {//prob to be selected with th
             lp1 -= dif
         }
         
-    }
+    }1
     //destory/pop if defender is weaker, or if attacker is weaker than attack mode defender
     //return new lp values if any
     return (user1._lifePoints = lp1, user2.lifePoints = lp2)
@@ -74,7 +82,7 @@ function attack(attacker, defender, user1, user2) {//prob to be selected with th
 class Game {
     constructor(user1, user2) {
         this._deck1 = shuffle(user1.onHandDeck),//shuffle added
-        this._deck2 = Shuffle(user2.onHandDeck),
+        this._deck2 = shuffle(user2.onHandDeck),
         this._lifePts1 = user1.lifePoints,
         this._lifePts2 = user2.lifePoints,
         //insert fusion/ritual deck as needed
