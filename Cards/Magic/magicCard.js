@@ -1,4 +1,4 @@
-const { CardEffect } = require("../parentCardClasses");
+const { CardEffectCreator } = require("../parentCardClasses");
 
 /** Leveraging COVE to accomplish task of transporting an object from point A to B without breaking separation of concerns
  *
@@ -6,7 +6,8 @@ const { CardEffect } = require("../parentCardClasses");
  * for transporting cache object from one file to another utilizing module exports
  */
 function storeMagicCards() {
-  class MagicCard extends CardEffect {
+  //create magic card sub-class from CardEffectCreator
+  class MagicCard extends CardEffectCreator {
     constructor(name, requirements, effects) {
       super(name, requirements, effects);
       this._type = ["magic"];
@@ -127,10 +128,10 @@ magicCards("MONSTER REBORN", null, ["Target 1 monster in either players graveyar
 //used to get all cards within memo
 const magicCardStorage = magicCards("get all cards");
 
-// line 123 - used to log the entire magicCardStorage
+// line below - used to log the entire magicCardStorage
 // console.log(magicCardStorage);
 
-//line 126 - used to test whether or not dark hole magic card was already created
-// magicCards("dark hole");
+//line below - used to test whether or not dark hole magic card was already created
+// console.log("Card is already here:",magicCards("dark hole"));
 
 exports.magicCardStorage = magicCardStorage;
