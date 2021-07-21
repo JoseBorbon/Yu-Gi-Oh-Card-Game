@@ -75,7 +75,10 @@ function storeDuelMonsterEffectCards() {
     duelMonsterEffectCardName = duelMonsterEffectCardName.toUpperCase();
     //console.log(duelMonsterEffectCardName.toUpperCase());
     if (duelMonsterEffectCardsCache[duelMonsterEffectCardName]) {
-      return duelMonsterEffectCardsCache[duelMonsterEffectCardName];
+      return Object.assign(
+        Object.create(duelMonsterEffectCardsCache[duelMonsterEffectCardName]),
+        duelMonsterEffectCardsCache[duelMonsterEffectCardName]
+      );
     }
 
     //not a-zA-Z , used to filter out strings that contain numbers or special characters in them
@@ -155,7 +158,10 @@ function storeDuelMonsterEffectCards() {
       effects,
       tributesRequired
     );
-    return duelMonsterEffectCardsCache[duelMonsterEffectCardName];
+    return Object.assign(
+      Object.create(duelMonsterEffectCardsCache[duelMonsterEffectCardName]),
+      duelMonsterEffectCardsCache[duelMonsterEffectCardName]
+    );
   };
 }
 
@@ -190,5 +196,11 @@ console.log(duelMonstersEffectCardStorage);
 
 //line below - used to test whether or not dark hole magic card was already created
 // console.log("Card is already here:",duelMonsterEffectCards("copycat"));
+
+const copycat = duelMonsterCards("copycat");
+console.log(copycat);
+
+//monster chant test below
+// console.log(copycat.monsterChant());
 
 exports.duelMonstersEffectCardStorage = duelMonstersEffectCardStorage;

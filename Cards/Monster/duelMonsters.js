@@ -1,6 +1,5 @@
 const { DuelMonstersCreator } = require("../parentCardClasses");
 
-// create duelMonsterSpecialClass
 /** Leveraging COVE to accomplish task of transporting an object from point A to B without breaking separation of concerns
  *
  * @returns {function} - function will be used to create persistent lexical scoped referenced data
@@ -65,7 +64,7 @@ function storeDuelMonsterCards() {
     duelMonsterCardName = duelMonsterCardName.toUpperCase();
     //console.log(duelMonsterCardName.toUpperCase());
     if (duelMonsterCardsCache[duelMonsterCardName]) {
-      return duelMonsterCardsCache[duelMonsterCardName];
+      return Object.assign(Object.create(duelMonsterCardsCache[duelMonsterCardName]), duelMonsterCardsCache[duelMonsterCardName]);
     }
 
     //not a-zA-Z , used to filter out strings that contain numbers or special characters in them
@@ -109,7 +108,7 @@ function storeDuelMonsterCards() {
       monsterCardRarity,
       tributesRequired
     );
-    return duelMonsterCardsCache[duelMonsterCardName];
+    return Object.assign(Object.create(duelMonsterCardsCache[duelMonsterCardName]), duelMonsterCardsCache[duelMonsterCardName]);
   };
 }
 
@@ -130,9 +129,20 @@ duelMonsterCards("Dark Magician", 7, "Spell Caster", "Dark", 2500, 2100, 2, "rar
 const duelMonstersCardStorage = duelMonsterCards("get all cards");
 
 // line below - used to log the entire duelMonstersCardStorage
-console.log(duelMonstersCardStorage);
+// console.log(duelMonstersCardStorage);
 
 //line below - used to test whether or not dark hole magic card was already created
-// console.log("Card is already here:",duelMonsterCards("copycat"));
+// console.log("Card is already here:",duelMonsterCards("dark magician"));
+
+// creating a copy by using object assign to grab properties and object create to prototypally inherit duel monster methods
+// const darkMagician = Object.assign(Object.create(duelMonsterCards("dark magician")), duelMonsterCards("dark magician"));
+const darkMagician = duelMonsterCards('dark magician');
+const darkMagician2 = duelMonsterCards('dark magician');
+
+darkMagician.starLevel = 8;
+darkMagician.attackPoints++;
+console.log('DM1: ',darkMagician);
+console.log('---------------');
+console.log('DM2: ',darkMagician2);
 
 exports.duelMonstersCardStorage = duelMonstersCardStorage;

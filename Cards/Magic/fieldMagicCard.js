@@ -29,7 +29,7 @@ function storeFieldMagicCards() {
     fieldMagicCardName = fieldMagicCardName.toUpperCase();
     // console.log(fieldMagicCardName.toUpperCase());
     if (fieldMagicCardsCache[fieldMagicCardName]) {
-      return fieldMagicCardsCache[fieldMagicCardName];
+      return Object.assign(Object.create(fieldMagicCardsCache[fieldMagicCardName]), fieldMagicCardsCache[fieldMagicCardName]);
     }
 
     //not a-zA-Z , used to filter out strings that contain numbers or special characters in them
@@ -129,7 +129,7 @@ function storeFieldMagicCards() {
       buffedMonsterTypes,
       nerfedMonsterTypes
     );
-    return fieldMagicCardsCache[fieldMagicCardName];
+    return Object.assign(Object.create(fieldMagicCardsCache[fieldMagicCardName]), fieldMagicCardsCache[fieldMagicCardName]);
   };
 }
 

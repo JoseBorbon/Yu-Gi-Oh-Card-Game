@@ -23,7 +23,7 @@ function storeTrapCards() {
     trapCardName = trapCardName.toUpperCase();
     // console.log(trapCardName.toUpperCase());
     if (trapCardsCache[trapCardName]) {
-      return trapCardsCache[trapCardName];
+      return Object.assign(Object.create(trapCardsCache[trapCardName]), trapCardsCache[trapCardName]);
     }
 
     //not a-zA-Z , used to filter out strings that contain numbers or special characters in them
@@ -88,7 +88,7 @@ function storeTrapCards() {
 
     // otherwise store the key in cache and assign it an object as value
     trapCardsCache[trapCardName] = new TrapCard(trapCardName, requirements, effects);
-    return trapCardsCache[trapCardName];
+    return Object.assign(Object.create(trapCardsCache[trapCardName]), trapCardsCache[trapCardName]);
   };
 }
 

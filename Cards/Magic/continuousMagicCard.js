@@ -28,7 +28,7 @@ function storeContinousMagicCards() {
     continuousMagicCardName = continuousMagicCardName.toUpperCase();
     // console.log(continuousMagicCardName.toUpperCase());
     if (continuousMagicCardsCache[continuousMagicCardName]) {
-      return continuousMagicCardsCache[continuousMagicCardName];
+      return Object.assign(Object.create(continuousMagicCardsCache[continuousMagicCardName]), continuousMagicCardsCache[continuousMagicCardName]);
     }
 
     //not a-zA-Z , used to filter out strings that contain numbers or special characters in them
@@ -93,7 +93,7 @@ function storeContinousMagicCards() {
 
     // otherwise store the key in cache and assign it an object as value
     continuousMagicCardsCache[continuousMagicCardName] = new ContinuousMagicCard(continuousMagicCardName, requirements, effects);
-    return continuousMagicCardsCache[continuousMagicCardName];
+    return Object.assign(Object.create(continuousMagicCardsCache[continuousMagicCardName]), continuousMagicCardsCache[continuousMagicCardName]);
   };
 }
 

@@ -28,7 +28,7 @@ function storeEquipMagicCards() {
     equipMagicCardName = equipMagicCardName.toUpperCase();
     // console.log(equipMagicCardName.toUpperCase());
     if (equipMagicCardsCache[equipMagicCardName]) {
-      return equipMagicCardsCache[equipMagicCardName];
+      return Object.assign(Object.create(equipMagicCardsCache[equipMagicCardName]), equipMagicCardsCache[equipMagicCardName]);
     }
 
     //not a-zA-Z , used to filter out strings that contain numbers or special characters in them
@@ -93,7 +93,7 @@ function storeEquipMagicCards() {
 
     // otherwise store the key in cache and assign it an object as value
     equipMagicCardsCache[equipMagicCardName] = new EquipMagicCard(equipMagicCardName, requirements, effects);
-    return equipMagicCardsCache[equipMagicCardName];
+    return Object.assign(Object.create(equipMagicCardsCache[equipMagicCardName]), equipMagicCardsCache[equipMagicCardName]);
   };
 }
 
