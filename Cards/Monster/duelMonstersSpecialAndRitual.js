@@ -141,12 +141,7 @@ const duelMonsterSpecialAndRitualCards = storeDuelMonsterSpecialAndRitualCards()
 // duelMonsterSpecialAndRitualCardName, starLevel, type, attribute, attackPoints, defensePoints, fusionID, monsterCardRarity, effects, cardRequiredToSummon (may be null for some types)
 // tier system rarity - normal, rare, ultra rare, legendary
 
-// celtic guardian
-duelMonsterSpecialAndRitualCards("celtic guardian", 4, "warrior", "earth", 1400, 1200, null, "normal", null, null);
-// blue eyes
-duelMonsterSpecialAndRitualCards("Blue-Eyes White Dragon", 8, "Dragon", "Light", 3000, 2500, 1, "rare");
-//dark magician
-duelMonsterSpecialAndRitualCards("Dark Magician", 7, "Spell Caster", "Dark", 2500, 2100, 2, "rare");
+
 
 /* ------- ADD ALL CARDS ABOVE THIS LINE ------- */
 //used to get all cards within memo

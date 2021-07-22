@@ -115,7 +115,7 @@ function storeDuelMonsterCards() {
 const duelMonsterCards = storeDuelMonsterCards();
 /* ------- ALL CARDS ADD BELOW THIS LINE ------- */
 //      duelMonsterCardName, starLevel, type, attribute, attackPoints, defensePoints, fusionID, monsterCardRarity, effects, tributesRequired,
-//tier system rarity - normal, rare, ultra rare, legendary
+//tier system rarity - normal, rare, legendary
 
 // celtic guardian
 duelMonsterCards("celtic guardian", 4, "warrior", "earth", 1400, 1200, null, "normal");
