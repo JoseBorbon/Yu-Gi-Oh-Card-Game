@@ -8,19 +8,7 @@ const { DuelMonstersCreator } = require("../parentCardClasses");
 function storeDuelMonsterSpecialAndRitualCards() {
   //create DuelMonstersSpecialAndRitual sub class from DuelMonstersSpecialAndRitual
   class DuelMonstersSpecialAndRitual extends DuelMonstersCreator {
-    constructor(
-      name,
-      starLevel,
-      type,
-      attribute,
-      attackPoints,
-      defensePoints,
-      fusionID,
-      monsterCardRarity,
-      tributesRequired,
-      effects,
-      summonCardRequired
-    ) {
+    constructor(name, starLevel, type, attribute, attackPoints, defensePoints, fusionID, monsterCardRarity, tributesRequired, effects, summonCardRequired) {
       super(
         name,
         starLevel,
@@ -64,26 +52,12 @@ function storeDuelMonsterSpecialAndRitualCards() {
    * @param {string[]} effects - Effect / Effects, represented as an array of strings
    * @returns {object} - Recently created object || existing value(object) inside of cache object
    */
-  return function (
-    duelMonsterSpecialAndRitualCardName,
-    starLevel,
-    type,
-    attribute,
-    attackPoints,
-    defensePoints,
-    fusionID,
-    monsterCardRarity,
-    effects,
-    summonCardRequired
-  ) {
+  return function (duelMonsterSpecialAndRitualCardName, starLevel, type, attribute, attackPoints, defensePoints, fusionID, monsterCardRarity, effects, summonCardRequired) {
     //if magic card name is inside of the object already return value
     duelMonsterSpecialAndRitualCardName = duelMonsterSpecialAndRitualCardName.toUpperCase();
     //console.log(duelMonsterSpecialAndRitualCardName.toUpperCase());
     if (duelMonsterSpecialAndRitualCardsCache[duelMonsterSpecialAndRitualCardName]) {
-      return Object.assign(
-        Object.create(duelMonsterSpecialAndRitualCardsCache[duelMonsterSpecialAndRitualCardName]),
-        duelMonsterSpecialAndRitualCardsCache[duelMonsterSpecialAndRitualCardName]
-      );
+      return Object.assign(Object.create(duelMonsterSpecialAndRitualCardsCache[duelMonsterSpecialAndRitualCardName]), duelMonsterSpecialAndRitualCardsCache[duelMonsterSpecialAndRitualCardName]);
     }
 
     //not a-zA-Z , used to filter out strings that contain numbers or special characters in them
@@ -114,6 +88,12 @@ function storeDuelMonsterSpecialAndRitualCards() {
 
     //uppercase name of magic card
     duelMonsterSpecialAndRitualCardName = duelMonsterSpecialAndRitualCardName.toUpperCase();
+    //uppercase type string
+    type = type.toUpperCase();
+    //uppercase attribute
+    attribute = attribute.toUpperCase();
+    //concatenate the uppercase first letter of monsterCardRarity and all other characters in monsterCardRarity string
+    monsterCardRarity = monsterCardRarity[0].toUpperCase() + monsterCardRarity.slice(1);
 
     // otherwise store the key in cache and assign it an object as value
     duelMonsterSpecialAndRitualCardsCache[duelMonsterSpecialAndRitualCardName] = new DuelMonstersSpecialAndRitual(
@@ -129,10 +109,7 @@ function storeDuelMonsterSpecialAndRitualCards() {
       effects,
       summonCardRequired
     );
-    return Object.assign(
-      Object.create(duelMonsterSpecialAndRitualCardsCache[duelMonsterSpecialAndRitualCardName]),
-      duelMonsterSpecialAndRitualCardsCache[duelMonsterSpecialAndRitualCardName]
-    );
+    return Object.assign(Object.create(duelMonsterSpecialAndRitualCardsCache[duelMonsterSpecialAndRitualCardName]), duelMonsterSpecialAndRitualCardsCache[duelMonsterSpecialAndRitualCardName]);
   };
 }
 
@@ -141,8 +118,7 @@ const duelMonsterSpecialAndRitualCards = storeDuelMonsterSpecialAndRitualCards()
 // duelMonsterSpecialAndRitualCardName, starLevel, type, attribute, attackPoints, defensePoints, fusionID, monsterCardRarity, effects, cardRequiredToSummon (may be null for some types)
 // tier system rarity - normal, rare, ultra rare, legendary
 
-
-
+duelMonsterSpecialAndRitualCards("magician of black chaos", 8, "spellcaster", "dark", 2800, 2600, null, "legendary", null, "black magic ritual");
 /* ------- ADD ALL CARDS ABOVE THIS LINE ------- */
 //used to get all cards within memo
 const duelMonstersSpecialAndRitualCardStorage = duelMonsterSpecialAndRitualCards("get all cards");

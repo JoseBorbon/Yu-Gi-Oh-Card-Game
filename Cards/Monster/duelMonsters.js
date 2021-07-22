@@ -49,17 +49,7 @@ function storeDuelMonsterCards() {
    * @param {string[]} effects - Effect / Effects, represented as an array of strings
    * @returns {object} - Recently created object || existing value(object) inside of cache object
    */
-  return function (
-    duelMonsterCardName,
-    starLevel,
-    type,
-    attribute,
-    attackPoints,
-    defensePoints,
-    fusionID,
-    monsterCardRarity,
-    effects
-  ) {
+  return function (duelMonsterCardName, starLevel, type, attribute, attackPoints, defensePoints, fusionID, monsterCardRarity, effects) {
     //if magic card name is inside of the object already return value
     duelMonsterCardName = duelMonsterCardName.toUpperCase();
     //console.log(duelMonsterCardName.toUpperCase());
@@ -95,19 +85,15 @@ function storeDuelMonsterCards() {
 
     //uppercase name of magic card
     duelMonsterCardName = duelMonsterCardName.toUpperCase();
+    //uppercase type string
+    type = type.toUpperCase();
+    //uppercase attribute
+    attribute = attribute.toUpperCase();
+    //concatenate the uppercase first letter of monsterCardRarity and all other characters in monsterCardRarity string
+    monsterCardRarity = monsterCardRarity[0].toUpperCase() + monsterCardRarity.slice(1);
 
     // otherwise store the key in cache and assign it an object as value
-    duelMonsterCardsCache[duelMonsterCardName] = new DuelMonsters(
-      duelMonsterCardName,
-      starLevel,
-      type,
-      attribute,
-      attackPoints,
-      defensePoints,
-      fusionID,
-      monsterCardRarity,
-      tributesRequired
-    );
+    duelMonsterCardsCache[duelMonsterCardName] = new DuelMonsters(duelMonsterCardName, starLevel, type, attribute, attackPoints, defensePoints, fusionID, monsterCardRarity, tributesRequired);
     return Object.assign(Object.create(duelMonsterCardsCache[duelMonsterCardName]), duelMonsterCardsCache[duelMonsterCardName]);
   };
 }
@@ -136,13 +122,13 @@ const duelMonstersCardStorage = duelMonsterCards("get all cards");
 
 // creating a copy by using object assign to grab properties and object create to prototypally inherit duel monster methods
 // const darkMagician = Object.assign(Object.create(duelMonsterCards("dark magician")), duelMonsterCards("dark magician"));
-const darkMagician = duelMonsterCards('dark magician');
-const darkMagician2 = duelMonsterCards('dark magician');
+const darkMagician = duelMonsterCards("dark magician");
+const darkMagician2 = duelMonsterCards("dark magician");
 
 darkMagician.starLevel = 8;
 darkMagician.attackPoints++;
-console.log('DM1: ',darkMagician);
-console.log('---------------');
-console.log('DM2: ',darkMagician2);
+console.log("DM1: ", darkMagician);
+console.log("---------------");
+console.log("DM2: ", darkMagician2);
 
 exports.duelMonstersCardStorage = duelMonstersCardStorage;

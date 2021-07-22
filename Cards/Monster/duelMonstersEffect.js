@@ -20,7 +20,7 @@ function storeDuelMonstersEffectCards() {
         monsterCardRarity,
         effects
       );
-      this._type = [type, "effect"];
+      this._type = [type, "Effect"];
       this._effects = effects; //takes in array of strings
     }
     //getters
@@ -120,6 +120,12 @@ function storeDuelMonstersEffectCards() {
 
     //uppercase name of magic card
     duelMonstersEffectCardName = duelMonstersEffectCardName.toUpperCase();
+    //uppercase type string
+    type = type.toUpperCase();
+    //uppercase attribute
+    attribute = attribute.toUpperCase();
+    //concatenate the uppercase first letter of monsterCardRarity and all other characters in monsterCardRarity string
+    monsterCardRarity = monsterCardRarity[0].toUpperCase() + monsterCardRarity.slice(1);
 
     // otherwise store the key in cache and assign it an object as value
     duelMonstersEffectCardsCache[duelMonstersEffectCardName] = new DuelMonstersEffect(

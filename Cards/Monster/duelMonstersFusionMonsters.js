@@ -41,25 +41,12 @@ function storeDuelMonstersFusionCards() {
    * @param {string[]} effects - Effects, represented as an array of strings
    * @returns {object} - Recently created object || existing value(object) inside of cache object
    */
-  return function (
-    duelMonstersFusionCardName,
-    starLevel,
-    type,
-    attribute,
-    attackPoints,
-    defensePoints,
-    fusionID,
-    monsterCardRarity,
-    fusionMaterials
-  ) {
+  return function (duelMonstersFusionCardName, starLevel, type, attribute, attackPoints, defensePoints, fusionID, monsterCardRarity, fusionMaterials) {
     //if magic card name is inside of the object already return value
     duelMonstersFusionCardName = duelMonstersFusionCardName.toUpperCase();
     //console.log(duelMonstersFusionCardName.toUpperCase());
     if (duelMonstersFusionCardsCache[duelMonstersFusionCardName]) {
-      return Object.assign(
-        Object.create(duelMonstersFusionCardsCache[duelMonstersFusionCardName]),
-        duelMonstersFusionCardsCache[duelMonstersFusionCardName]
-      );
+      return Object.assign(Object.create(duelMonstersFusionCardsCache[duelMonstersFusionCardName]), duelMonstersFusionCardsCache[duelMonstersFusionCardName]);
     }
 
     //not a-zA-Z , used to filter out strings that contain numbers or special characters in them
@@ -106,6 +93,12 @@ function storeDuelMonstersFusionCards() {
 
     //uppercase name of magic card
     duelMonstersFusionCardName = duelMonstersFusionCardName.toUpperCase();
+    //uppercase type string
+    type = type.toUpperCase();
+    //uppercase attribute
+    attribute = attribute.toUpperCase();
+    //concatenate the uppercase first letter of monsterCardRarity and all other characters in monsterCardRarity string
+    monsterCardRarity = monsterCardRarity[0].toUpperCase() + monsterCardRarity.slice(1);
 
     // otherwise store the key in cache and assign it an object as value
     duelMonstersFusionCardsCache[duelMonstersFusionCardName] = new DuelMonstersFusion(
@@ -119,10 +112,7 @@ function storeDuelMonstersFusionCards() {
       monsterCardRarity,
       fusionMaterials
     );
-    return Object.assign(
-      Object.create(duelMonstersFusionCardsCache[duelMonstersFusionCardName]),
-      duelMonstersFusionCardsCache[duelMonstersFusionCardName]
-    );
+    return Object.assign(Object.create(duelMonstersFusionCardsCache[duelMonstersFusionCardName]), duelMonstersFusionCardsCache[duelMonstersFusionCardName]);
   };
 }
 const duelMonstersFusionCards = storeDuelMonstersFusionCards();
@@ -142,17 +132,7 @@ const blueEyesUltimateDragon = duelMonstersFusionCards(
   "Blue-Eyes White Dragon + Blue-Eyes White Dragon2 + Blue-Eyes White Dragon3"
 );
 
-const gaiaTheDragonChampion = duelMonstersFusionCards(
-  "Gaia the dragon champion",
-  7,
-  "dragon",
-  "wind",
-  2600,
-  2100,
-  null,
-  "rare",
-  "Gaia The Fierce Knight + Curse of Dragon"
-);
+const gaiaTheDragonChampion = duelMonstersFusionCards("Gaia the dragon champion", 7, "dragon", "wind", 2600, 2100, null, "rare", "Gaia The Fierce Knight + Curse of Dragon");
 
 /* ------- ADD ALL CARDS ABOVE THIS LINE ------- */
 //used to get all cards within memo
