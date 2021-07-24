@@ -95,11 +95,7 @@ function storeContinuousTrapCards() {
 const continuousTrapCards = storeContinuousTrapCards();
 /* ------- ALL CARDS ADD BELOW THIS LINE ------- */
 
-continuousTrapCards(
-  "SPELLBINDING CIRCLE",
-  ["1 monster must be on opponents side of the field"],
-  ["selected monster on opponents side is unable to attack or change its battle position"]
-);
+continuousTrapCards("SPELLBINDING CIRCLE", ["1 monster must be on opponents side of the field"], ["selected monster on opponents side is unable to attack or change its battle position"]);
 
 continuousTrapCards("IMPERIAL ORDER", null, [
   "negate all spell effects on the field",

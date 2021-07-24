@@ -9,10 +9,36 @@ const fs = require("fs");
 //importing magicCards object
 const imported = require("./Cards/Magic/magicCard");
 const magicCardStorage = imported.magicCardStorage;
-console.log(magicCardStorage["dark hole".toUpperCase()]);
 
-//import duelist user file and convert from JSON to object
-const duelist2 = JSON.parse(fs.readFileSync("duelist.json"));
+// WILL BE WORKING ON THIS LATER, I intend to
+const user = {
+  lifePoints: 4000,
+  //saveData key will store user save data in an object
+  saveData: JSON.parse(fs.readFileSync("duelist.json")),
+
+  //have to keep methods here because stringifying the object will remove all methods
+  incrementLevel: function () {
+    //if level is under 20, increment level, otherwise do nothing
+    if (this.saveData.level < 10) this.saveData.level++;
+  },
+  getLifePoints: function () {
+    return this.lifePoints;
+  },
+  decreaseLifePoints: function (damage) {
+    if (this.getLifePoints() - damage <= 0) this.lifePoints = 0;
+    //edge case for if life points are less than or equal to 0, to be 0
+    else this.lifePoints = this.getLifePoints() - damage; //used to lower life points
+  },
+  increaseLifePoints: function (heal) {
+    this.lifePoints = this.getLifePoints() + heal; //used to increase life points
+  },
+};
+
+//declare a variable called userSaveData and assign it user at saveData which points to an object
+const userSaveData = user.saveData;
+// userSaveData.currency += 10000000000000;
+console.log(user.getLifePoints());
+console.log(userSaveData);
 
 //create duelMonster class [underscore is needed for property names otherwise it'll cause stack overflow error]
 class DuelMonster {
@@ -27,7 +53,7 @@ class DuelMonster {
     this._specialEffect = null;
     this._onField = false;
     this._inGraveyard = false;
-    this._attackPos = true //false for defense
+    this._attackPos = true; //false for defense
     this._faceUp = true; //set to false for face-down
   }
   //getters

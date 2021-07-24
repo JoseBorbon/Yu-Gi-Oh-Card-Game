@@ -95,38 +95,19 @@ function storeTrapCards() {
 const trapCards = storeTrapCards();
 /* ------- ALL CARDS ADD BELOW THIS LINE ------- */
 
-trapCards(
-  "MIRROR FORCE",
-  ["opponent has to declare an attack"],
-  ["destoy all attack position monsters opponent controls on their side of the field"]
-);
+trapCards("MIRROR FORCE", ["opponent has to declare an attack"], ["destoy all attack position monsters opponent controls on their side of the field"]);
 
 trapCards(
   "LIGHTFORCE SWORD",
   ["opponent must at least have 1 card in hand"],
-  [
-    "randomly select a card from opponents hand and remove it from play face-down for 3 opponent turns",
-    "after 4th turn, put card back in opponents hand ",
-  ]
+  ["randomly select a card from opponents hand and remove it from play face-down for 3 opponent turns", "after 4th turn, put card back in opponents hand "]
 );
 
-trapCards(
-  "MAGIC CYLINDER",
-  ["opponent must declare an attack"],
-  ["negate attack using this card", "inflict damage to opponent equal to monsters attack points"]
-);
+trapCards("MAGIC CYLINDER", ["opponent must declare an attack"], ["negate attack using this card", "inflict damage to opponent equal to monsters attack points"]);
 
-trapCards(
-  "MAGIC JAMMER",
-  ["opponent must activate spell card"],
-  ["negate spell card activation and send to graveyard unless opponent has a counter trap card on field"]
-);
+trapCards("MAGIC JAMMER", ["opponent must activate spell card"], ["negate spell card activation and send to graveyard unless opponent has a counter trap card on field"]);
 
-trapCards(
-  "MASK OF WEAKNESS",
-  ["opponent monster must attack"],
-  ["decrease the attack points of opponents attacking monster by 700 until the end of opponents turn"]
-);
+trapCards("MASK OF WEAKNESS", ["opponent monster must attack"], ["decrease the attack points of opponents attacking monster by 700 until the end of opponents turn"]);
 
 /* ------- ADD ALL CARDS ABOVE THIS LINE ------- */
 //used to get all cards within memo

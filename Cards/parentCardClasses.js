@@ -11,7 +11,7 @@ class DuelMonstersCreator {
     this._specialEffect = null;
     this._onField = false;
     this._inGraveyard = false;
-    this._attackPos = true //false for defense
+    this._attackPos = true; //false for defense
     this._faceUp = true; //set to false for face-down
   }
   //getters
@@ -76,7 +76,7 @@ class CardEffectCreator {
     this._requirements = requirements;
     this._effect = effect; // an array of a string if 1 effect only, otherwise an array of strings
     this._faceUp = true;
-    this._attackPos = true //false for defense
+    this._attackPos = true; //false for defense
   }
   //getters
   get type() {

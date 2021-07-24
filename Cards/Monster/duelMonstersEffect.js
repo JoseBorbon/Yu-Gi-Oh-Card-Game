@@ -48,25 +48,12 @@ function storeDuelMonstersEffectCards() {
    * @param {string[]} effects - Effects, represented as an array of strings
    * @returns {object} - Recently created object || existing value(object) inside of cache object
    */
-  return function (
-    duelMonstersEffectCardName,
-    starLevel,
-    type,
-    attribute,
-    attackPoints,
-    defensePoints,
-    fusionID,
-    monsterCardRarity,
-    effects
-  ) {
+  return function (duelMonstersEffectCardName, starLevel, type, attribute, attackPoints, defensePoints, fusionID, monsterCardRarity, effects) {
     //if magic card name is inside of the object already return value
     duelMonstersEffectCardName = duelMonstersEffectCardName.toUpperCase();
     //console.log(duelMonstersEffectCardName.toUpperCase());
     if (duelMonstersEffectCardsCache[duelMonstersEffectCardName]) {
-      return Object.assign(
-        Object.create(duelMonstersEffectCardsCache[duelMonstersEffectCardName]),
-        duelMonstersEffectCardsCache[duelMonstersEffectCardName]
-      );
+      return Object.assign(Object.create(duelMonstersEffectCardsCache[duelMonstersEffectCardName]), duelMonstersEffectCardsCache[duelMonstersEffectCardName]);
     }
 
     //not a-zA-Z , used to filter out strings that contain numbers or special characters in them
@@ -139,10 +126,7 @@ function storeDuelMonstersEffectCards() {
       monsterCardRarity,
       effects
     );
-    return Object.assign(
-      Object.create(duelMonstersEffectCardsCache[duelMonstersEffectCardName]),
-      duelMonstersEffectCardsCache[duelMonstersEffectCardName]
-    );
+    return Object.assign(Object.create(duelMonstersEffectCardsCache[duelMonstersEffectCardName]), duelMonstersEffectCardsCache[duelMonstersEffectCardName]);
   };
 }
 
@@ -152,10 +136,7 @@ const duelMonstersEffectCards = storeDuelMonstersEffectCards();
 //tier system rarity - normal, rare, ultra rare, legendary
 
 //jinzo
-duelMonstersEffectCards("jinzo", 6, "machine", "dark", 2400, 1500, null, "ultra rare", [
-  "trap cards cannot be activated",
-  "the effects of all face-up trap cards are negated",
-]);
+duelMonstersEffectCards("jinzo", 6, "machine", "dark", 2400, 1500, null, "ultra rare", ["trap cards cannot be activated", "the effects of all face-up trap cards are negated"]);
 
 //copycat
 duelMonstersEffectCards("copycat", 1, "spellcaster", "light", 0, 0, null, "normal", [
