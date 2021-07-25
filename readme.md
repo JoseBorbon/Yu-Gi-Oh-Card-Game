@@ -127,7 +127,7 @@ Biggest things this week will be `importing` and `exporting`. In order to accomp
 
 ## Sources
 
-- [Monster Cards In Our Project](https://db.ygoprodeck.com/search/?&startdate=Thu%20Dec%2031%201998&enddate=Tue%20Nov%2030%202004&dateregion=tcg_date&sort=tcg_date&num=100&offset=0&view=Gallery)
+- [Cards In Our Project](https://db.ygoprodeck.com/search/?&startdate=Thu%20Dec%2031%201998&enddate=Tue%20Nov%2030%202004&dateregion=tcg_date&sort=tcg_date&num=100&offset=0&view=Gallery)
 - [Magic Cards Info](https://yugioh.fandom.com/wiki/Spell_Card)
   - [Field Spell Card](https://yugioh.fandom.com/wiki/Field_Spell_Card)
   - [Equip Spell Card](https://yugioh.fandom.com/wiki/Equip_Spell_Card)
