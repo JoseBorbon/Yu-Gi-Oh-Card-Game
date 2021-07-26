@@ -32,6 +32,57 @@ function shuffle(array) {
     }
     return array;
 }
+function mainPhase1(hand, field){
+    let main = true
+    let sumAvailable = true
+    while (main){
+        let command = readlineSync.question('Commands are: summon, set, change, flip, effect, spell, next').toLowerCase()
+        switch (command) {
+            case ('summon' || 'set')://limit to 1/whole turn, check if tribute needed
+                if (!sumAvailable){ 
+                    console.log('Already summoned this turn')
+                    break;}
+                let monInHand = []
+                for (let [index,card] of hand.entries()){
+                    if (card._type.includes('monster')){
+                        monInHand.push([index,card])
+                    }
+                }
+                let monster = readlineSync.question(`Eligible summon/sets are: ${monInHand}, input index`)//do we want index or string input? whats easier?
+                //something to check summon requirements if any
+                let position = readlineSync.question(`What position?: Attack or Set`).toLowerCase()
+                //take card out of hand
+                if (position === 'set'){
+                    //monster access placeholder
+                    hand[monster]._attackPos = false
+                    hand[monster]._faceUp = false
+                }
+                field[0].push(hand.splice(monster,1)[0])
+                //play to field in chosen position
+                sumAvailable = false
+                break;
+            case 'special'://Special summon
+                //Check 
+                break;
+            case 'change'://Change position of mon that wasn't played this turn
+                break;
+            case 'flip': //flip effects, might be able to connect it with some magic and trap cards too
+                break;
+            case 'effect'://activate monster/spell effects if applicable
+                break;
+            case 'spell': //need a check for some trap cards having been set prior, 
+                break;
+            case 'next': //next phase
+                main = false 
+                break;
+            default:
+                console.log('type better')
+                break;
+            }
+        }
+}
+
+
 
 function attack(attacker, defender, user1, user2, field1, field2) {//prob to be selected with this._field1[0][n] atm
     let lp1 = user1._lifePoints
