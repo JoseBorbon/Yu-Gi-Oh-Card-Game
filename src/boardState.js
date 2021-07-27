@@ -32,11 +32,11 @@ function shuffle(array) {
     }
     return array;
 }
-function mainPhase1(hand, field){
+function mainPhase1(hand, field){ //do we need to reference the opponent field? can the cards pull that info?
     let main = true
     let sumAvailable = true
     while (main){
-        let command = readlineSync.question('Commands are: summon, set, change, flip, effect, spell, next').toLowerCase()
+        let command = readlineSync.question('Commands are: summon, set, change, effect, spell, next').toLowerCase()
         switch (command) {
             case ('summon' || 'set')://limit to 1/whole turn, check if tribute needed
                 if (!sumAvailable){ 
@@ -62,11 +62,22 @@ function mainPhase1(hand, field){
                 sumAvailable = false
                 break;
             case 'special'://Special summon
-                //Check 
+                //Check conditions
                 break;
             case 'change'://Change position of mon that wasn't played this turn
-                break;
-            case 'flip': //flip effects, might be able to connect it with some magic and trap cards too
+                let monster = readlineSync.question(`Eligible monsters are: ${field[0]}, input index`)
+                if (monsterPlayedThisTurn){//prevent change of pos for things played this turn
+                    //some way to keep track of when things entered
+                }
+                if (field[0][monster]._attackPos ===true){
+                    field[0][monster]._attackPos = false
+                }else if(field[0][monster]._faceUp ===false){
+                    field[0][monster]._attackPos = true
+                    field[0][monster]._faceUp = true
+                    if (field[0][monster]._flipEffect){//flip effect check placeholder
+                        //trigger as needed
+                    }
+                }
                 break;
             case 'effect'://activate monster/spell effects if applicable
                 break;
